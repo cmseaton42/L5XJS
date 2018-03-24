@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="28.00" TargetName="PB_OneButton" TargetType="DataType" ContainsContext="true" Owner="Operator" ExportDate="Tue Aug 29 09:06:17 2017" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans">
+<Controller Use="Context" Name="TRW_10673_Final">
+<DataTypes Use="Context">
+<DataType Use="Target" Name="PB_OneButton" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZPB_OneButt0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="Push" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZPB_OneButt0" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[*]]>
+</Description>
+</Member>
+<Member Name="State" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZPB_OneButt0" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[*]]>
+</Description>
+</Member>
+<Member Name="Visibility" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZPB_OneButt0" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[*]]>
+</Description>
+</Member>
+<Member Name="Ind" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZPB_OneButt0" BitNumber="3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[*]]>
+</Description>
+</Member>
+<Member Name="Interlock" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZPB_OneButt0" BitNumber="4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[*]]>
+</Description>
+</Member>
+<Member Name="ONS" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZPB_OneButt0" BitNumber="5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[*]]>
+</Description>
+</Member>
+<Member Name="Tmr" DataType="TIMER" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[*]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+</DataTypes>
+</Controller>
+</RSLogix5000Content>

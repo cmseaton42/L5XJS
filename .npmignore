@@ -1,0 +1,12 @@
+**/*.spec.js
+/coverage
+/manuals
+/scripts
+/sample
+/assets
+
+**/__snapshots__
+CONTRIBUTE.md
+CODE_OF_CONDUCT.md
+ISSUE_TEMPLATE.md
+PULL_REQUEST_TEMPLATE.md
