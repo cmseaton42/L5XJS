@@ -13,7 +13,7 @@
 
 # L5XJS
 
-A simple API designed to build and parse Allen Bradley *.L5X* files to empower users to automate PLC code generation.
+A simple API designed to build and parse Allen Bradley *.L5X* files in order to empower users to automate PLC code generation.
 
 > **NOTE**
 >

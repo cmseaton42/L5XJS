@@ -6,6 +6,7 @@
 /assets
 
 **/__snapshots__
+**/__test-data__
 CONTRIBUTE.md
 CODE_OF_CONDUCT.md
 ISSUE_TEMPLATE.md
