@@ -32,7 +32,7 @@ describe("Document Class", () => {
         });
     });
 
-    describe("Public Methods", () => {
+    describe("Instance Methods", () => {
         let docFull;
         let docEmpty;
 
@@ -43,6 +43,40 @@ describe("Document Class", () => {
 
         test("get dom: Gets Mutable Dom Reference", () => {
             expect(docFull.dom).toMatchSnapshot();
+        });
+
+        test("findOne: Finds First Document Element", () => {
+            expect(docFull.findOne("nothing")).toBeNull();
+            expect(docEmpty.findOne("nothing")).toBeNull();
+
+            expect(docFull.findOne("Controller")).not.toBeNull();
+
+            expect(docFull.findOne("Controller")).toMatchSnapshot();
+
+            expect(docEmpty.findOne("Controller")).not.toBeNull();
+            expect(docEmpty.findOne("Controller")).toMatchSnapshot();
+
+            expect(docFull.findOne("Member", { Name: "Push" })).not.toBeNull();
+            expect(docEmpty.findOne("Member", { Name: "Push" })).toBeNull();
+
+            expect(docFull.findOne("Member", { Name: "Push" })).toMatchSnapshot();
+            expect(docFull.findOne("Member")).toMatchSnapshot();
+
+            expect(
+                docFull.findOne("Controller").findOne("Member", { Name: "Push" })
+            ).toMatchSnapshot();
+            expect(docFull.findOne("Controller").findOne("Member", { name: "Push" })).toBeNull();
+        });
+
+        test("findOne: Rejects Invalid Inputs", () => {
+            const fn = (type, attr, tree) => () => docFull.findOne(type, attr, tree);
+
+            expect(fn(12, null, null)).toThrow();
+            expect(fn("Controller", null, null)).not.toThrow();
+            expect(fn("Controller", 12, null)).toThrow();
+            expect(fn("Controller", { Name: "another" }, null)).not.toThrow();
+            expect(fn("Controller", { Name: "another" }, 12)).toThrow();
+            expect(fn("Controller", { Name: "another" }, {})).not.toThrow();
         });
 
         test("find: Finds Document Elements and Returns New Document", () => {
@@ -76,6 +110,31 @@ describe("Document Class", () => {
             expect(fn("Controller", { Name: "another" }, null)).not.toThrow();
             expect(fn("Controller", { Name: "another" }, 12)).toThrow();
             expect(fn("Controller", { Name: "another" }, {})).not.toThrow();
+        });
+
+        test("append: Throws on Invalid Inputs", () => {
+            const fn = arg => () => docEmpty.append(arg);
+
+            expect(fn({ key: "value" })).toThrow();
+            expect(fn(docFull)).not.toThrow();
+        });
+
+        test("append: Appends New Dom Element", () => {
+            const tags = new Document(null, {
+                type: "element",
+                name: "Tags",
+                attributes: {
+                    Name: "SomeTag",
+                    TagType: "Base"
+                }
+            });
+            
+            const newTags = docEmpty.findOne("Controller").append(tags);
+            expect(newTags).toMatchSnapshot();
+
+            const comment = tags.append(tags);
+            
+            expect(comment).toMatchSnapshot();
         });
 
         test("replace: Throws on Invalid Inputs", () => {
