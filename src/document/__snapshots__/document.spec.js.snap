@@ -291,10 +291,239 @@ Object {
 }
 `;
 
-exports[`Document Class Public Methods Find: Finds Document Elements and Returns New Document 1`] = `
+exports[`Document Class Public Methods find: Finds Document Elements and Returns New Document 1`] = `
 Array [
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "Name": "TRW_10673_Final",
+        "Use": "Context",
+      },
+      "elements": Array [
+        Object {
+          "attributes": Object {
+            "Use": "Context",
+          },
+          "elements": Array [
+            Object {
+              "attributes": Object {
+                "Class": "User",
+                "Family": "NoFamily",
+                "Name": "PB_OneButton",
+                "Use": "Target",
+              },
+              "elements": Array [
+                Object {
+                  "elements": Array [
+                    Object {
+                      "attributes": Object {
+                        "DataType": "SINT",
+                        "Dimension": "0",
+                        "ExternalAccess": "Read/Write",
+                        "Hidden": "true",
+                        "Name": "ZZZZZZZZZZPB_OneButt0",
+                        "Radix": "Decimal",
+                      },
+                      "name": "Member",
+                      "type": "element",
+                    },
+                    Object {
+                      "attributes": Object {
+                        "BitNumber": "0",
+                        "DataType": "BIT",
+                        "Dimension": "0",
+                        "ExternalAccess": "Read/Write",
+                        "Hidden": "false",
+                        "Name": "Push",
+                        "Radix": "Decimal",
+                        "Target": "ZZZZZZZZZZPB_OneButt0",
+                      },
+                      "elements": Array [
+                        Object {
+                          "elements": Array [
+                            Object {
+                              "cdata": "*",
+                              "type": "cdata",
+                            },
+                          ],
+                          "name": "Description",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Member",
+                      "type": "element",
+                    },
+                    Object {
+                      "attributes": Object {
+                        "BitNumber": "1",
+                        "DataType": "BIT",
+                        "Dimension": "0",
+                        "ExternalAccess": "Read/Write",
+                        "Hidden": "false",
+                        "Name": "State",
+                        "Radix": "Decimal",
+                        "Target": "ZZZZZZZZZZPB_OneButt0",
+                      },
+                      "elements": Array [
+                        Object {
+                          "elements": Array [
+                            Object {
+                              "cdata": "*",
+                              "type": "cdata",
+                            },
+                          ],
+                          "name": "Description",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Member",
+                      "type": "element",
+                    },
+                    Object {
+                      "attributes": Object {
+                        "BitNumber": "2",
+                        "DataType": "BIT",
+                        "Dimension": "0",
+                        "ExternalAccess": "Read/Write",
+                        "Hidden": "false",
+                        "Name": "Visibility",
+                        "Radix": "Decimal",
+                        "Target": "ZZZZZZZZZZPB_OneButt0",
+                      },
+                      "elements": Array [
+                        Object {
+                          "elements": Array [
+                            Object {
+                              "cdata": "*",
+                              "type": "cdata",
+                            },
+                          ],
+                          "name": "Description",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Member",
+                      "type": "element",
+                    },
+                    Object {
+                      "attributes": Object {
+                        "BitNumber": "3",
+                        "DataType": "BIT",
+                        "Dimension": "0",
+                        "ExternalAccess": "Read/Write",
+                        "Hidden": "false",
+                        "Name": "Ind",
+                        "Radix": "Decimal",
+                        "Target": "ZZZZZZZZZZPB_OneButt0",
+                      },
+                      "elements": Array [
+                        Object {
+                          "elements": Array [
+                            Object {
+                              "cdata": "*",
+                              "type": "cdata",
+                            },
+                          ],
+                          "name": "Description",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Member",
+                      "type": "element",
+                    },
+                    Object {
+                      "attributes": Object {
+                        "BitNumber": "4",
+                        "DataType": "BIT",
+                        "Dimension": "0",
+                        "ExternalAccess": "Read/Write",
+                        "Hidden": "false",
+                        "Name": "Interlock",
+                        "Radix": "Decimal",
+                        "Target": "ZZZZZZZZZZPB_OneButt0",
+                      },
+                      "elements": Array [
+                        Object {
+                          "elements": Array [
+                            Object {
+                              "cdata": "*",
+                              "type": "cdata",
+                            },
+                          ],
+                          "name": "Description",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Member",
+                      "type": "element",
+                    },
+                    Object {
+                      "attributes": Object {
+                        "BitNumber": "5",
+                        "DataType": "BIT",
+                        "Dimension": "0",
+                        "ExternalAccess": "Read/Write",
+                        "Hidden": "false",
+                        "Name": "ONS",
+                        "Radix": "Decimal",
+                        "Target": "ZZZZZZZZZZPB_OneButt0",
+                      },
+                      "elements": Array [
+                        Object {
+                          "elements": Array [
+                            Object {
+                              "cdata": "*",
+                              "type": "cdata",
+                            },
+                          ],
+                          "name": "Description",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Member",
+                      "type": "element",
+                    },
+                    Object {
+                      "attributes": Object {
+                        "DataType": "TIMER",
+                        "Dimension": "0",
+                        "ExternalAccess": "Read/Write",
+                        "Hidden": "false",
+                        "Name": "Tmr",
+                        "Radix": "NullType",
+                      },
+                      "elements": Array [
+                        Object {
+                          "elements": Array [
+                            Object {
+                              "cdata": "*",
+                              "type": "cdata",
+                            },
+                          ],
+                          "name": "Description",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Member",
+                      "type": "element",
+                    },
+                  ],
+                  "name": "Members",
+                  "type": "element",
+                },
+              ],
+              "name": "DataType",
+              "type": "element",
+            },
+          ],
+          "name": "DataTypes",
+          "type": "element",
+        },
+      ],
+      "name": "Controller",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "Name": "TRW_10673_Final",
         "Use": "Context",
@@ -528,10 +757,18 @@ Array [
 ]
 `;
 
-exports[`Document Class Public Methods Find: Finds Document Elements and Returns New Document 2`] = `
+exports[`Document Class Public Methods find: Finds Document Elements and Returns New Document 2`] = `
 Array [
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "Use": "context",
+      },
+      "elements": Array [],
+      "name": "Controller",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "Use": "context",
       },
@@ -544,10 +781,36 @@ Array [
 ]
 `;
 
-exports[`Document Class Public Methods Find: Finds Document Elements and Returns New Document 3`] = `
+exports[`Document Class Public Methods find: Finds Document Elements and Returns New Document 3`] = `
 Array [
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "BitNumber": "0",
+        "DataType": "BIT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "Push",
+        "Radix": "Decimal",
+        "Target": "ZZZZZZZZZZPB_OneButt0",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "BitNumber": "0",
         "DataType": "BIT",
@@ -578,10 +841,22 @@ Array [
 ]
 `;
 
-exports[`Document Class Public Methods Find: Finds Document Elements and Returns New Document 4`] = `
+exports[`Document Class Public Methods find: Finds Document Elements and Returns New Document 4`] = `
 Array [
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "DataType": "SINT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "true",
+        "Name": "ZZZZZZZZZZPB_OneButt0",
+        "Radix": "Decimal",
+      },
+      "name": "Member",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "DataType": "SINT",
         "Dimension": "0",
@@ -597,6 +872,32 @@ Array [
   },
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "BitNumber": "0",
+        "DataType": "BIT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "Push",
+        "Radix": "Decimal",
+        "Target": "ZZZZZZZZZZPB_OneButt0",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "BitNumber": "0",
         "DataType": "BIT",
@@ -651,10 +952,62 @@ Array [
       "name": "Member",
       "type": "element",
     },
+    "_mutable_dom": Object {
+      "attributes": Object {
+        "BitNumber": "1",
+        "DataType": "BIT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "State",
+        "Radix": "Decimal",
+        "Target": "ZZZZZZZZZZPB_OneButt0",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
     "class_id": "ba7cc09d99f4a84810458bc89abf612f",
   },
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "BitNumber": "2",
+        "DataType": "BIT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "Visibility",
+        "Radix": "Decimal",
+        "Target": "ZZZZZZZZZZPB_OneButt0",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "BitNumber": "2",
         "DataType": "BIT",
@@ -709,10 +1062,62 @@ Array [
       "name": "Member",
       "type": "element",
     },
+    "_mutable_dom": Object {
+      "attributes": Object {
+        "BitNumber": "3",
+        "DataType": "BIT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "Ind",
+        "Radix": "Decimal",
+        "Target": "ZZZZZZZZZZPB_OneButt0",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
     "class_id": "ba7cc09d99f4a84810458bc89abf612f",
   },
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "BitNumber": "4",
+        "DataType": "BIT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "Interlock",
+        "Radix": "Decimal",
+        "Target": "ZZZZZZZZZZPB_OneButt0",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "BitNumber": "4",
         "DataType": "BIT",
@@ -767,10 +1172,60 @@ Array [
       "name": "Member",
       "type": "element",
     },
+    "_mutable_dom": Object {
+      "attributes": Object {
+        "BitNumber": "5",
+        "DataType": "BIT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "ONS",
+        "Radix": "Decimal",
+        "Target": "ZZZZZZZZZZPB_OneButt0",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
     "class_id": "ba7cc09d99f4a84810458bc89abf612f",
   },
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "DataType": "TIMER",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "Tmr",
+        "Radix": "NullType",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "DataType": "TIMER",
         "Dimension": "0",
@@ -799,10 +1254,36 @@ Array [
 ]
 `;
 
-exports[`Document Class Public Methods Find: Finds Document Elements and Returns New Document 5`] = `
+exports[`Document Class Public Methods find: Finds Document Elements and Returns New Document 5`] = `
 Array [
   Document {
     "_dom": Object {
+      "attributes": Object {
+        "BitNumber": "0",
+        "DataType": "BIT",
+        "Dimension": "0",
+        "ExternalAccess": "Read/Write",
+        "Hidden": "false",
+        "Name": "Push",
+        "Radix": "Decimal",
+        "Target": "ZZZZZZZZZZPB_OneButt0",
+      },
+      "elements": Array [
+        Object {
+          "elements": Array [
+            Object {
+              "cdata": "*",
+              "type": "cdata",
+            },
+          ],
+          "name": "Description",
+          "type": "element",
+        },
+      ],
+      "name": "Member",
+      "type": "element",
+    },
+    "_mutable_dom": Object {
       "attributes": Object {
         "BitNumber": "0",
         "DataType": "BIT",
@@ -833,6 +1314,520 @@ Array [
 ]
 `;
 
-exports[`Document Class Public Methods toString: Returns Accurate String 1`] = `"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\" standalone=\\"yes\\"?><RSLogix5000Content SchemaRevision=\\"1.0\\" SoftwareRevision=\\"28.00\\" TargetName=\\"PB_OneButton\\" TargetType=\\"DataType\\" ContainsContext=\\"true\\" Owner=\\"Operator\\" ExportDate=\\"Tue Aug 29 09:06:17 2017\\" ExportOptions=\\"References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans\\"><Controller Use=\\"Context\\" Name=\\"TRW_10673_Final\\"><DataTypes Use=\\"Context\\"><DataType Use=\\"Target\\" Name=\\"PB_OneButton\\" Family=\\"NoFamily\\" Class=\\"User\\"><Members><Member Name=\\"ZZZZZZZZZZPB_OneButt0\\" DataType=\\"SINT\\" Dimension=\\"0\\" Radix=\\"Decimal\\" Hidden=\\"true\\" ExternalAccess=\\"Read/Write\\"/><Member Name=\\"Push\\" DataType=\\"BIT\\" Dimension=\\"0\\" Radix=\\"Decimal\\" Hidden=\\"false\\" Target=\\"ZZZZZZZZZZPB_OneButt0\\" BitNumber=\\"0\\" ExternalAccess=\\"Read/Write\\"><Description><![CDATA[*]]></Description></Member><Member Name=\\"State\\" DataType=\\"BIT\\" Dimension=\\"0\\" Radix=\\"Decimal\\" Hidden=\\"false\\" Target=\\"ZZZZZZZZZZPB_OneButt0\\" BitNumber=\\"1\\" ExternalAccess=\\"Read/Write\\"><Description><![CDATA[*]]></Description></Member><Member Name=\\"Visibility\\" DataType=\\"BIT\\" Dimension=\\"0\\" Radix=\\"Decimal\\" Hidden=\\"false\\" Target=\\"ZZZZZZZZZZPB_OneButt0\\" BitNumber=\\"2\\" ExternalAccess=\\"Read/Write\\"><Description><![CDATA[*]]></Description></Member><Member Name=\\"Ind\\" DataType=\\"BIT\\" Dimension=\\"0\\" Radix=\\"Decimal\\" Hidden=\\"false\\" Target=\\"ZZZZZZZZZZPB_OneButt0\\" BitNumber=\\"3\\" ExternalAccess=\\"Read/Write\\"><Description><![CDATA[*]]></Description></Member><Member Name=\\"Interlock\\" DataType=\\"BIT\\" Dimension=\\"0\\" Radix=\\"Decimal\\" Hidden=\\"false\\" Target=\\"ZZZZZZZZZZPB_OneButt0\\" BitNumber=\\"4\\" ExternalAccess=\\"Read/Write\\"><Description><![CDATA[*]]></Description></Member><Member Name=\\"ONS\\" DataType=\\"BIT\\" Dimension=\\"0\\" Radix=\\"Decimal\\" Hidden=\\"false\\" Target=\\"ZZZZZZZZZZPB_OneButt0\\" BitNumber=\\"5\\" ExternalAccess=\\"Read/Write\\"><Description><![CDATA[*]]></Description></Member><Member Name=\\"Tmr\\" DataType=\\"TIMER\\" Dimension=\\"0\\" Radix=\\"NullType\\" Hidden=\\"false\\" ExternalAccess=\\"Read/Write\\"><Description><![CDATA[*]]></Description></Member></Members></DataType></DataTypes></Controller></RSLogix5000Content>"`;
+exports[`Document Class Public Methods get dom: Gets Mutable Dom Reference 1`] = `
+Object {
+  "declaration": Object {
+    "attributes": Object {
+      "encoding": "UTF-8",
+      "standalone": "yes",
+      "version": "1.0",
+    },
+  },
+  "elements": Array [
+    Object {
+      "attributes": Object {
+        "ContainsContext": "true",
+        "ExportDate": "Tue Aug 29 09:06:17 2017",
+        "ExportOptions": "References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans",
+        "Owner": "Operator",
+        "SchemaRevision": "1.0",
+        "SoftwareRevision": "28.00",
+        "TargetName": "PB_OneButton",
+        "TargetType": "DataType",
+      },
+      "elements": Array [
+        Object {
+          "attributes": Object {
+            "Name": "TRW_10673_Final",
+            "Use": "Context",
+          },
+          "elements": Array [
+            Object {
+              "attributes": Object {
+                "Use": "Context",
+              },
+              "elements": Array [
+                Object {
+                  "attributes": Object {
+                    "Class": "User",
+                    "Family": "NoFamily",
+                    "Name": "PB_OneButton",
+                    "Use": "Target",
+                  },
+                  "elements": Array [
+                    Object {
+                      "elements": Array [
+                        Object {
+                          "attributes": Object {
+                            "DataType": "SINT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "true",
+                            "Name": "ZZZZZZZZZZPB_OneButt0",
+                            "Radix": "Decimal",
+                          },
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "0",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Push",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "1",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "State",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "2",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Visibility",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "3",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Ind",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "4",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Interlock",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "5",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "ONS",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "DataType": "TIMER",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Tmr",
+                            "Radix": "NullType",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Members",
+                      "type": "element",
+                    },
+                  ],
+                  "name": "DataType",
+                  "type": "element",
+                },
+              ],
+              "name": "DataTypes",
+              "type": "element",
+            },
+          ],
+          "name": "Controller",
+          "type": "element",
+        },
+      ],
+      "name": "RSLogix5000Content",
+      "type": "element",
+    },
+  ],
+}
+`;
 
-exports[`Document Class Public Methods toString: Returns Accurate String 2`] = `"<?xml version=\\"1.0\\" encoding=\\"UTF-8\\" standalone=\\"yes\\"?><RSLogix5000Content SchemaRevision=\\"1.0\\" ContainsContext=\\"true\\"><Controller Use=\\"context\\"/></RSLogix5000Content>"`;
+exports[`Document Class Public Methods replace: Successfully Updates Document 1`] = `
+Object {
+  "declaration": Object {
+    "attributes": Object {
+      "encoding": "UTF-8",
+      "standalone": "yes",
+      "version": "1.0",
+    },
+  },
+  "elements": Array [
+    Object {
+      "attributes": Object {
+        "ContainsContext": "true",
+        "ExportDate": "Tue Aug 29 09:06:17 2017",
+        "ExportOptions": "References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans",
+        "Owner": "Operator",
+        "SchemaRevision": "1.0",
+        "SoftwareRevision": "28.00",
+        "TargetName": "PB_OneButton",
+        "TargetType": "DataType",
+      },
+      "elements": Array [
+        Object {
+          "attributes": Object {
+            "Name": "TRW_10673_Final",
+            "Use": "Context",
+          },
+          "elements": Array [
+            Object {
+              "attributes": Object {
+                "Use": "Context",
+              },
+              "elements": Array [
+                Object {
+                  "attributes": Object {
+                    "Class": "User",
+                    "Family": "NoFamily",
+                    "Name": "PB_OneButton",
+                    "Use": "Target",
+                  },
+                  "elements": Array [
+                    Object {
+                      "elements": Array [
+                        Object {
+                          "attributes": Object {
+                            "DataType": "SINT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "true",
+                            "Name": "ZZZZZZZZZZPB_OneButt0",
+                            "Radix": "Decimal",
+                          },
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "0",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "BetterPush",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "1",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "State",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "2",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Visibility",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "3",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Ind",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "4",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Interlock",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "BitNumber": "5",
+                            "DataType": "BIT",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "ONS",
+                            "Radix": "Decimal",
+                            "Target": "ZZZZZZZZZZPB_OneButt0",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                        Object {
+                          "attributes": Object {
+                            "DataType": "TIMER",
+                            "Dimension": "0",
+                            "ExternalAccess": "Read/Write",
+                            "Hidden": "false",
+                            "Name": "Tmr",
+                            "Radix": "NullType",
+                          },
+                          "elements": Array [
+                            Object {
+                              "elements": Array [
+                                Object {
+                                  "cdata": "*",
+                                  "type": "cdata",
+                                },
+                              ],
+                              "name": "Description",
+                              "type": "element",
+                            },
+                          ],
+                          "name": "Member",
+                          "type": "element",
+                        },
+                      ],
+                      "name": "Members",
+                      "type": "element",
+                    },
+                  ],
+                  "name": "DataType",
+                  "type": "element",
+                },
+              ],
+              "name": "DataTypes",
+              "type": "element",
+            },
+          ],
+          "name": "Controller",
+          "type": "element",
+        },
+      ],
+      "name": "RSLogix5000Content",
+      "type": "element",
+    },
+  ],
+}
+`;

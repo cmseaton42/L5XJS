@@ -40,6 +40,18 @@ class Document {
                 ]
             };
         }
+
+        this._mutable_dom = clone(this._dom);
+    }
+
+    /**
+     * Returns a mutable dom reference to be manipulated by user
+     *
+     * @readonly
+     * @memberof Document
+     */
+    get dom() {
+        return this._mutable_dom;
     }
 
     /**
@@ -112,6 +124,57 @@ class Document {
         _find(type, attr, tree);
 
         return returnArray.length > 0 ? returnArray : null;
+    }
+
+    /**
+     * Attempts to replace existing document branch with passed document
+     * -> returns true if successful
+     *
+     * @param {Document} doc
+     * @returns {boolean}
+     * @memberof Document
+     */
+    replace(doc) {
+        if (!Document.isDocument(doc))
+            throw new Error(
+                `Replace expected to receive doc of type <Document> instead got type <${typeof doc}>`
+            );
+
+        const _replace = tree => {
+            // Nothing left to search, return null
+            if (!tree.elements || !Array.isArray(tree.elements) || tree.elements.length === 0)
+                return false;
+
+            // Search elements
+            for (let i in tree.elements) {
+                const elem = tree.elements[i];
+                // Check if this is the desired element
+                if (elem.name === doc._dom.name) {
+                    // Check if attributes match
+                    if (doc._dom.attributes) {
+                        let attrMatch = true;
+                        for (let key of Object.keys(doc._dom.attributes)) {
+                            if (
+                                !elem.attributes[key] ||
+                                elem.attributes[key] !== doc._dom.attributes[key]
+                            )
+                                attrMatch = false;
+                        }
+
+                        // Attributes match so return subtree
+                        if (attrMatch) {
+                            tree.elements[i] = doc.dom;
+                            return true;
+                        }
+                    }
+                } else {
+                    if (_replace(elem)) return true;
+                }
+            }
+            return false;
+        };
+
+        return _replace(this._dom);
     }
 
     /**

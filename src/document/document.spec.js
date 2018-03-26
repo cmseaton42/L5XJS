@@ -41,7 +41,11 @@ describe("Document Class", () => {
             docEmpty = new Document();
         });
 
-        test("Find: Finds Document Elements and Returns New Document", () => {
+        test("get dom: Gets Mutable Dom Reference", () => {
+            expect(docFull.dom).toMatchSnapshot();
+        });
+
+        test("find: Finds Document Elements and Returns New Document", () => {
             expect(docFull.find("nothing")).toBeNull();
             expect(docEmpty.find("nothing")).toBeNull();
 
@@ -63,7 +67,7 @@ describe("Document Class", () => {
             expect(docFull.find("Controller")[0].find("Member", { name: "Push" })).toBeNull();
         });
 
-        test("Find: Rejects Invalid Inputs", () => {
+        test("find: Rejects Invalid Inputs", () => {
             const fn = (type, attr, tree) => () => docFull.find(type, attr, tree);
 
             expect(fn(12, null, null)).toThrow();
@@ -74,9 +78,23 @@ describe("Document Class", () => {
             expect(fn("Controller", { Name: "another" }, {})).not.toThrow();
         });
 
-        test("toString: Returns Accurate String", () => {
-            expect(docFull.toString()).toMatchSnapshot();
-            expect(docEmpty.toString()).toMatchSnapshot();
+        test("replace: Throws on Invalid Inputs", () => {
+            const fn = arg => () => docEmpty.replace(arg);
+
+            expect(fn({ key: "value" })).toThrow();
+            expect(fn(docFull)).not.toThrow();
+        });
+
+        test("replace: Successfully Updates Document", () => {
+            let push = docFull.find("Member", { Name: "Push" })[0];
+
+            push.dom.attributes.Name = "BetterPush";
+
+            expect(docFull.replace(push)).toBeTruthy();
+            expect(docFull._dom).toMatchSnapshot();
+
+            push._dom.attributes = null;
+            expect(docFull.replace(push)).toBeFalsy();
         });
 
         test("export: Exported Data is Correct", () => {
