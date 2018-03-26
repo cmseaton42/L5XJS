@@ -42,22 +42,25 @@ describe("Document Class", () => {
         });
 
         test("Find: Finds Document Elements and Returns New Document", () => {
-            expect(docFull.find("nothing")).toBe(null);
-            expect(docEmpty.find("nothing")).toBe(null);
+            expect(docFull.find("nothing")).toBeNull();
+            expect(docEmpty.find("nothing")).toBeNull();
 
-            expect(docFull.find("Controller")).not.toBe(null);
+            expect(docFull.find("Controller")).not.toBeNull();
             expect(docFull.find("Controller")).toMatchSnapshot();
 
-            expect(docEmpty.find("Controller")).not.toBe(null);
+            expect(docEmpty.find("Controller")).not.toBeNull();
             expect(docEmpty.find("Controller")).toMatchSnapshot();
 
-            expect(docFull.find("Member", { Name: "Push" })).not.toBe(null);
-            expect(docEmpty.find("Member", { Name: "Push" })).toBe(null);
+            expect(docFull.find("Member", { Name: "Push" })).not.toBeNull();
+            expect(docEmpty.find("Member", { Name: "Push" })).toBeNull();
 
             expect(docFull.find("Member", { Name: "Push" })).toMatchSnapshot();
+            expect(docFull.find("Member")).toMatchSnapshot();
 
-            expect(docFull.find("Controller").find("Member", { Name: "Push" })).toMatchSnapshot();
-            expect(docFull.find("Controller").find("Member", { name: "Push" })).toBeNull();
+            expect(
+                docFull.find("Controller")[0].find("Member", { Name: "Push" })
+            ).toMatchSnapshot();
+            expect(docFull.find("Controller")[0].find("Member", { name: "Push" })).toBeNull();
         });
 
         test("Find: Rejects Invalid Inputs", () => {
@@ -83,7 +86,7 @@ describe("Document Class", () => {
                 path.resolve(__dirname, "./__test-data__/datatype.L5X"),
                 "utf8"
             );
-            
+
             let generated = fs.readFileSync(
                 path.resolve(__dirname, "./__test-data__/generated_datatype.L5X"),
                 "utf8"

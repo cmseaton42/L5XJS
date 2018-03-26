@@ -1,6 +1,6 @@
 {
     "name": "l5x-js",
-    "version": "0.1.0",
+    "version": "0.1.1-alpha.0",
     "description": "A tool to help with parsing and generating Allen Bradley L5X files.",
     "main": "./src/index.js",
     "scripts": {

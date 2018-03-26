@@ -55,7 +55,7 @@ class Document {
         // Validate Inputs
         if (typeof type !== "string")
             throw new Error(
-                `Find expected a type name of type <String> instead got type <${typeof type}>`
+                `Find expected a type name of type <String> or null instead got type <${typeof type}>`
             );
 
         if (attr && typeof attr !== "object")
@@ -68,43 +68,50 @@ class Document {
                 `Find expected a search tree of type <Object> or null instead got <${typeof search_tree}>`
             );
 
+        let returnArray = [];
+
+        // Search function definiton
+        const _find = (type, attr, search_tree) => {
+            // Nothing left to search, return null
+            if (
+                !search_tree.elements ||
+                !Array.isArray(search_tree.elements) ||
+                search_tree.elements.length === 0
+            )
+                return null;
+
+            // Search elements
+            for (let elem of search_tree.elements) {
+                // Check if this is the desired element
+                if (elem.name === type) {
+                    // Check if attributes match
+                    if (attr) {
+                        let attrMatch = true;
+                        for (let key of Object.keys(attr)) {
+                            if (!elem.attributes[key] || elem.attributes[key] !== attr[key])
+                                attrMatch = false;
+                        }
+
+                        // Attributes match so return subtree
+                        if (attrMatch) {
+                            returnArray.push(new Document(null, clone(elem)));
+                        }
+                    } else {
+                        // No attributes need to match
+                        returnArray.push(new Document(null, clone(elem)));
+                    }
+                } else {
+                    _find(type, attr, elem);
+                }
+            }
+        };
+
         // If no tree is passed then search from document root
         let tree = search_tree ? search_tree : this._dom;
 
-        // Nothing left to search, return null
-        if (!tree.elements || !Array.isArray(tree.elements) || tree.length === 0) return null;
+        _find(type, attr, tree);
 
-        // Search elements
-        for (let elem of tree.elements) {
-            // Check if this is the desired element
-            if (elem.name === type) {
-                // Check if attributes match
-                if (attr) {
-                    let attrMatch = true;
-                    for (let key of Object.keys(attr)) {
-                        if (!elem.attributes[key] || elem.attributes[key] !== attr[key])
-                            attrMatch = false;
-                    }
-
-                    // Attributes match so return subtree
-                    if (attrMatch) return elem;
-                } else {
-                    // No attributes need to match
-                    return elem;
-                }
-            }
-
-            // Search branches for desired element
-            const found = this.find(type, attr, elem);
-
-            if (found) {
-                if (Document.isDocument(found)) return found;
-                else return new Document(null, clone(found));
-            }
-        }
-
-        // Nothing found, return null
-        return null;
+        return returnArray.length > 0 ? returnArray : null;
     }
 
     /**
