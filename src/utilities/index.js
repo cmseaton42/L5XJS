@@ -14,4 +14,4 @@ const hash = input => {
         .digest("hex");
 };
 
-module.exports = { hash }
+module.exports = { hash };
