@@ -1,17 +1,24 @@
 const fs = require("fs");
+const crypto = require("crypto");
+const clone = require("clone");
 const { resolve } = require("path");
-const { xml2js } = require("xml-js");
+const { xml2js, js2xml } = require("xml-js");
 
 class Document {
-    constructor(filepath = null) {
+    constructor(filepath = null, document_tree = null) {
+        this.class_id = hash("I'm a Document Class");
+
         // Initialize Base L5X Dom Object
         // --> This Object is in the form that the
         // --> package 'xml-js' will understand
         if (filepath) {
             // Start from existing L5X file
-            this._dom = xml2js(fs.readFileSync(resolve(__dirname, filepath)));
+            this._dom = xml2js(fs.readFileSync(resolve(__dirname, filepath)), "utf8");
+        } else if (document_tree) {
+            // Set document to incoming document tree
+            this._dom = document_tree;
         } else {
-            // No filepath given, initialize new document
+            // No filepathor tree given, initialize new document
             this._dom = {
                 declaration: {
                     attributes: { version: "1.0", encoding: "UTF-8", standalone: "yes" }
@@ -73,14 +80,14 @@ class Document {
             if (elem.name === type) {
                 // Check if attributes match
                 if (attr) {
-                    
-                    let test = true;
+                    let attrMatch = true;
                     for (let key of Object.keys(attr)) {
                         if (!elem.attributes[key] || elem.attributes[key] !== attr[key])
-                            test = false;
+                            attrMatch = false;
                     }
 
-                    if (test) return elem;
+                    // Attributes match so return subtree
+                    if (attrMatch) return elem;
                 } else {
                     // No attributes need to match
                     return elem;
@@ -88,15 +95,63 @@ class Document {
             }
 
             // Search branches for desired element
-            const subtree = this.find(type, attr, elem);
-            if (subtree) return subtree;
+            const found = this.find(type, attr, elem);
+
+            if (found) {
+                if (Document.isDocument(found)) return found;
+                else return new Document(null, clone(found));
+            }
         }
 
         // Nothing found, return null
         return null;
     }
 
-    //export(path) {}
+    /**
+     * Returns a string representation of the current document
+     *
+     * @returns {string}
+     * @memberof Document
+     */
+    toString() {
+        return js2xml(this._dom);
+    }
+
+    /**
+     * Exports document to provided filepath
+     *
+     * @param {string} filepath
+     * @memberof Document
+     */
+    export(filepath) {
+        fs.writeFileSync(resolve(__dirname, filepath), this.toString());
+    }
+
+    /**
+     * Check if passed object is a document
+     *
+     * @static
+     * @param {object} doc - object to test
+     * @returns {boolean}
+     * @memberof Document
+     */
+    static isDocument(doc) {
+        return doc.class_id && doc.class_id === hash("I'm a Document Class");
+    }
 }
+
+/**
+ * Generates Unique ID for Each Instance
+ * based on the Generated EPATH
+ *
+ * @param {buffer} input - EPATH of Tag
+ * @returns {string} hash
+ */
+const hash = input => {
+    return crypto
+        .createHash("md5")
+        .update(input)
+        .digest("hex");
+};
 
 module.exports = Document;

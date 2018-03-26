@@ -27,6 +27,7 @@
     "author": "Canaan Seaton",
     "license": "ISC",
     "dependencies": {
+        "clone": "^1.0.4",
         "xml-js": "^1.6.2"
     },
     "devDependencies": {

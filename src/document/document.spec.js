@@ -1,4 +1,6 @@
 const Document = require("./index");
+const fs = require("fs");
+const path = require("path");
 
 describe("Document Class", () => {
     describe("New Instance", () => {
@@ -20,6 +22,16 @@ describe("Document Class", () => {
         });
     });
 
+    describe("Static Methods", () => {
+        test("isDocument: Returns Appropriate Judgement", () => {
+            const doc = new Document();
+            const fake = {};
+
+            expect(Document.isDocument(doc)).toBeTruthy();
+            expect(Document.isDocument(fake)).toBeFalsy();
+        });
+    });
+
     describe("Public Methods", () => {
         let docFull;
         let docEmpty;
@@ -29,7 +41,7 @@ describe("Document Class", () => {
             docEmpty = new Document();
         });
 
-        test("Find: Finds Document Elements", () => {
+        test("Find: Finds Document Elements and Returns New Document", () => {
             expect(docFull.find("nothing")).toBe(null);
             expect(docEmpty.find("nothing")).toBe(null);
 
@@ -43,7 +55,9 @@ describe("Document Class", () => {
             expect(docEmpty.find("Member", { Name: "Push" })).toBe(null);
 
             expect(docFull.find("Member", { Name: "Push" })).toMatchSnapshot();
-            //expect(docFull.find(""));
+
+            expect(docFull.find("Controller").find("Member", { Name: "Push" })).toMatchSnapshot();
+            expect(docFull.find("Controller").find("Member", { name: "Push" })).toBeNull();
         });
 
         test("Find: Rejects Invalid Inputs", () => {
@@ -54,7 +68,33 @@ describe("Document Class", () => {
             expect(fn("Controller", 12, null)).toThrow();
             expect(fn("Controller", { Name: "another" }, null)).not.toThrow();
             expect(fn("Controller", { Name: "another" }, 12)).toThrow();
-            expect(fn("Controller", { Name: "another" }, {} )).not.toThrow();
+            expect(fn("Controller", { Name: "another" }, {})).not.toThrow();
+        });
+
+        test("toString: Returns Accurate String", () => {
+            expect(docFull.toString()).toMatchSnapshot();
+            expect(docEmpty.toString()).toMatchSnapshot();
+        });
+
+        test("export: Exported Data is Correct", () => {
+            docFull.export("./__test-data__/generated_datatype.L5X");
+
+            let original = fs.readFileSync(
+                path.resolve(__dirname, "./__test-data__/datatype.L5X"),
+                "utf8"
+            );
+            
+            let generated = fs.readFileSync(
+                path.resolve(__dirname, "./__test-data__/generated_datatype.L5X"),
+                "utf8"
+            );
+
+            original = original.replace(/\s/g, "");
+            generated = generated.replace(/\s/g, "");
+
+            expect(original === generated).toBeTruthy();
+
+            fs.unlinkSync(path.resolve(__dirname, "./__test-data__/generated_datatype.L5X"));
         });
     });
 });
