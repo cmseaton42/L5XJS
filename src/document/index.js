@@ -1,7 +1,7 @@
 const fs = require("fs");
-const crypto = require("crypto");
 const clone = require("clone");
 const { resolve } = require("path");
+const { hash } = require("../utilities");
 const { xml2js, js2xml } = require("xml-js");
 
 class Document {
@@ -139,19 +139,5 @@ class Document {
         return doc.class_id && doc.class_id === hash("I'm a Document Class");
     }
 }
-
-/**
- * Generates Unique ID for Each Instance
- * based on the Generated EPATH
- *
- * @param {buffer} input - EPATH of Tag
- * @returns {string} hash
- */
-const hash = input => {
-    return crypto
-        .createHash("md5")
-        .update(input)
-        .digest("hex");
-};
 
 module.exports = Document;
