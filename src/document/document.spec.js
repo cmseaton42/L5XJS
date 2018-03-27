@@ -247,7 +247,7 @@ describe("Document Class", () => {
             expect(() => tag.addProgram("hello", "saying hello")).toThrow();
         });
 
-        test("addProgram: Throws if No Program or Controller Element Exists", () => {
+        test("addProgram: Throws if No Controller Element Exists", () => {
             const fn = () =>
                 new Document(null, {
                     type: "element",
@@ -263,6 +263,43 @@ describe("Document Class", () => {
             expect(docEmpty).toMatchSnapshot();
 
             docEmpty.addProgram("prog2");
+            expect(docEmpty).toMatchSnapshot();
+        });
+
+        test("addLadderRoutine: Throws on Invalid Inputs", () => {
+            const fn = (rout, prog, desc = null, use = "Context") => () =>
+                docEmpty.addLadderRoutine(rout, prog, desc, use);
+
+            docEmpty.addProgram("prog");
+
+            expect(fn(12)).toThrow();
+            expect(fn("hello")).toThrow();
+            expect(fn("hello", 12)).toThrow();
+            expect(fn("hello", "prog", 12)).toThrow();
+            expect(fn("hello", "prog", "saying hello", 12)).toThrow();
+            expect(fn("hello", "prog", "saying hello", "notContext")).toThrow();
+            expect(fn("hello", "prog", "saying hello")).not.toThrow();
+            expect(fn("hello", "prog", "saying hello", "Target")).not.toThrow();
+
+            const tag = new Document(null, {
+                type: "element",
+                name: "Tag",
+                attributes: {
+                    Name: "someTag"
+                },
+                elements: []
+            });
+
+            expect(() => tag.addLadderRoutine("hello", "sayingHello")).toThrow();
+        });
+
+        test("addLadderRoutine: Performs Desired Function", () => {
+            docEmpty.addProgram("prog");
+
+            docEmpty.addLadderRoutine("r1", "prog", "a cool routine");
+            expect(docEmpty).toMatchSnapshot();
+
+            docEmpty.addLadderRoutine("r2", "prog");
             expect(docEmpty).toMatchSnapshot();
         });
 

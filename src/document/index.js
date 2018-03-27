@@ -321,10 +321,19 @@ class Document {
         /* eslint-enable indent */
     }
 
+    /**
+     * Add program element to document
+     * - only if document has controller element
+     *
+     * @param {string} progname
+     * @param {string} [description=null]
+     * @param {string} [use="Context"]
+     * @memberof Document
+     */
     addProgram(progname, description = null, use = "Context") {
         if (typeof progname !== "string")
             throw new Error(
-                `addTag expected tagname of type <String> instead got <${typeof tagname}>`
+                `addProgram expected tagname of type <String> instead got <${typeof tagname}>`
             );
 
         if (typeof use !== "string")
@@ -384,6 +393,90 @@ class Document {
                     type: "element",
                     name: "Programs"
                 }).append(program)
+            );
+        /* eslint-enable indent */
+    }
+
+    /**
+     * Adds routine to target program
+     * - only if document has target program element
+     *
+     * @param {string} routname
+     * @param {string} prog
+     * @param {string} [description=null]
+     * @param {string} [use="Context"]
+     * @memberof Document
+     */
+    addLadderRoutine(routname, prog, description = null, use = "Context") {
+        if (typeof routname !== "string")
+            throw new Error(
+                `addLadderRoutine expected routname of type <String> instead got <${typeof routname}>`
+            );
+
+        if (typeof prog !== "string")
+            throw new Error(
+                `addLadderRoutine expected prog of type <String> instead got <${typeof prog}>`
+            );
+
+        if (typeof use !== "string")
+            throw new Error(
+                `addLadderRoutine expected use of type <String> instead got <${typeof use}>`
+            );
+
+        if (use !== "Context" && use !== "Target") {
+            throw new Error(
+                `addLadderRoutine expected use to be 'Context' or 'Target' instead got '${use}'`
+            );
+        }
+
+        if (description && typeof description !== "string")
+            throw new Error(
+                `addLadderRoutine expected description of type <String> instead got <${typeof description}>`
+            );
+
+        /* eslint-disable indent */
+        // Find target to mount new tag too
+        const target = this.findOne("Program", { Name: prog });
+
+        if (!target)
+            throw new Error(
+                "addLadderRoutine could not find Program target element to mount routine"
+            );
+
+        // Build new tag element
+        const routine = new Document(null, {
+            type: "element",
+            name: "Routine",
+            attributes: {
+                Use: use,
+                Name: routname
+            },
+            elements: description
+                ? [
+                      {
+                          type: "element",
+                          name: "Description",
+                          elements: [
+                              {
+                                  type: "cdata",
+                                  cdata: description
+                              }
+                          ]
+                      }
+                  ]
+                : []
+        });
+
+        // Get tags element from target
+        let routines = target.findOne("Routines");
+
+        if (routines) routines.append(routine);
+        else
+            target.append(
+                new Document(null, {
+                    type: "element",
+                    name: "Routines"
+                }).append(routine)
             );
         /* eslint-enable indent */
     }

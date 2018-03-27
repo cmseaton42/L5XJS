@@ -1,5 +1,170 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Document Class Instance Methods addLadderRoutine: Performs Desired Function 1`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "prog",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "r1",
+                              "Use": "Context",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [
+                                  Object {
+                                    "cdata": "a cool routine",
+                                    "type": "cdata",
+                                  },
+                                ],
+                                "name": "Description",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
+exports[`Document Class Instance Methods addLadderRoutine: Performs Desired Function 2`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "prog",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "r1",
+                              "Use": "Context",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [
+                                  Object {
+                                    "cdata": "a cool routine",
+                                    "type": "cdata",
+                                  },
+                                ],
+                                "name": "Description",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                          Object {
+                            "attributes": Object {
+                              "Name": "r2",
+                              "Use": "Context",
+                            },
+                            "elements": Array [],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
 exports[`Document Class Instance Methods addProgram: Performs Desired Function 1`] = `
 Document {
   "_dom": Object {
