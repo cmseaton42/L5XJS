@@ -125,7 +125,7 @@ describe("Document Class", () => {
                 name: "Tags"
             });
 
-            const newTags = docEmpty.findOne("Controller").append(tags);
+            docEmpty.findOne("Controller").append(tags);
             expect(docEmpty).toMatchSnapshot();
 
             tags.append(
@@ -172,8 +172,27 @@ describe("Document Class", () => {
             expect(fn("hello", { a: 6 }, null, "it is a tag")).not.toThrow();
         });
 
+        test("addTag: Throws if No Program of Controller Element Exists", () => {
+            const fn_cont = () =>
+                new Document(null, {
+                    type: "element",
+                    name: "Tags",
+                    elements: []
+                }).addTag("hello");
+
+            const fn_prog = () =>
+                new Document(null, {
+                    type: "element",
+                    name: "Tags",
+                    elements: []
+                }).addTag("hello", {}, "prog");
+
+            expect(fn_cont).toThrow();
+            expect(fn_prog).toThrow();
+        });
+
         test("addTag: Performs Desired Function", () => {
-            const controller = docEmpty.findOne("Controller").append(
+            docEmpty.findOne("Controller").append(
                 new Document(null, {
                     type: "element",
                     name: "Programs",
@@ -196,9 +215,11 @@ describe("Document Class", () => {
             docEmpty.addTag(
                 "tag2",
                 { AliasFor: "tag1", TagType: "Alias" },
-                "hello",
-                "A cool tag 2"
+                "hello"
             );
+            expect(docEmpty).toMatchSnapshot();
+
+            docEmpty.addTag("tag3", {}, null, "A cool tag 1");
             expect(docEmpty).toMatchSnapshot();
         });
 

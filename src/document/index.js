@@ -1,5 +1,4 @@
 const fs = require("fs");
-const clone = require("clone");
 const { resolve } = require("path");
 const { hash } = require("../utilities");
 const { xml2js, js2xml } = require("xml-js");

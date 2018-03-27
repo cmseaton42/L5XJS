@@ -119,11 +119,122 @@ Document {
                               "Name": "tag2",
                               "TagType": "Alias",
                             },
+                            "elements": Array [],
+                            "name": "Tag",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Tags",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "DataType": "DINT",
+                      "ExternalAccess": "Read/Write",
+                      "Name": "tag1",
+                      "TagType": "Base",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "cdata": "A cool tag 1",
+                            "type": "cdata",
+                          },
+                        ],
+                        "name": "Description",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Tag",
+                    "type": "element",
+                  },
+                ],
+                "name": "Tags",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
+exports[`Document Class Instance Methods addTag: Performs Desired Function 3`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "hello",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "AliasFor": "tag1",
+                              "Class": "Standard",
+                              "DataType": "DINT",
+                              "ExternalAccess": "Read/Write",
+                              "Name": "tag2",
+                              "TagType": "Alias",
+                            },
+                            "elements": Array [],
+                            "name": "Tag",
+                            "type": "element",
+                          },
+                          Object {
+                            "attributes": Object {
+                              "Class": "Standard",
+                              "DataType": "DINT",
+                              "ExternalAccess": "Read/Write",
+                              "Name": "tag3",
+                              "TagType": "Base",
+                            },
                             "elements": Array [
                               Object {
                                 "elements": Array [
                                   Object {
-                                    "cdata": "A cool tag 2",
+                                    "cdata": "A cool tag 1",
                                     "type": "cdata",
                                   },
                                 ],
