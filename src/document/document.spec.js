@@ -122,19 +122,23 @@ describe("Document Class", () => {
         test("append: Appends New Dom Element", () => {
             const tags = new Document(null, {
                 type: "element",
-                name: "Tags",
-                attributes: {
-                    Name: "SomeTag",
-                    TagType: "Base"
-                }
+                name: "Tags"
             });
 
             const newTags = docEmpty.findOne("Controller").append(tags);
-            expect(newTags).toMatchSnapshot();
+            expect(docEmpty).toMatchSnapshot();
 
-            const comment = tags.append(tags);
-
-            expect(comment).toMatchSnapshot();
+            tags.append(
+                new Document(null, {
+                    type: "element",
+                    name: "Tag",
+                    attributes: {
+                        Name: "SomeTag",
+                        TagType: "Base"
+                    }
+                })
+            );
+            expect(docEmpty).toMatchSnapshot();
         });
 
         test("addTag: Throws on Invalid Inputs", () => {
@@ -186,32 +190,16 @@ describe("Document Class", () => {
                 })
             );
 
-            docEmpty.replace(controller);
-
             docEmpty.addTag("tag1", {}, null, "A cool tag 1");
             expect(docEmpty).toMatchSnapshot();
 
-            docEmpty.addTag("tag2", { AliasFor: "tag1", TagType: "Alias" }, "hello", "A cool tag 2");
+            docEmpty.addTag(
+                "tag2",
+                { AliasFor: "tag1", TagType: "Alias" },
+                "hello",
+                "A cool tag 2"
+            );
             expect(docEmpty).toMatchSnapshot();
-        });
-
-        test("replace: Throws on Invalid Inputs", () => {
-            const fn = arg => () => docEmpty.replace(arg);
-
-            expect(fn({ key: "value" })).toThrow();
-            expect(fn(docFull)).not.toThrow();
-        });
-
-        test("replace: Successfully Updates Document", () => {
-            let push = docFull.find("Member", { Name: "Push" })[0];
-
-            push.dom.attributes.Name = "BetterPush";
-
-            expect(docFull.replace(push)).toBeTruthy();
-            expect(docFull._dom).toMatchSnapshot();
-
-            push._dom.attributes = null;
-            expect(docFull.replace(push)).toBeFalsy();
         });
 
         test("export: Exported Data is Correct", () => {

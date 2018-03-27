@@ -51,8 +51,6 @@ class Document {
                 ]
             };
         }
-
-        this._mutable_dom = clone(this._dom);
     }
 
     /**
@@ -62,7 +60,7 @@ class Document {
      * @memberof Document
      */
     get dom() {
-        return this._mutable_dom;
+        return this._dom;
     }
 
     /**
@@ -122,7 +120,7 @@ class Document {
 
             if (found) {
                 if (Document.isDocument(found)) return found;
-                else return new Document(null, clone(found));
+                else return new Document(null, found);
             }
         }
 
@@ -182,11 +180,11 @@ class Document {
 
                         // Attributes match so return subtree
                         if (attrMatch) {
-                            returnArray.push(new Document(null, clone(elem)));
+                            returnArray.push(new Document(null, elem));
                         }
                     } else {
                         // No attributes need to match
-                        returnArray.push(new Document(null, clone(elem)));
+                        returnArray.push(new Document(null, elem));
                     }
                 } else {
                     _find(type, attr, elem);
@@ -203,58 +201,6 @@ class Document {
     }
 
     /**
-     * Attempts to replace existing document branch with passed document
-     * -> returns true if successful
-     *
-     * @param {Document} doc
-     * @returns {boolean}
-     * @memberof Document
-     */
-    replace(doc) {
-        if (!Document.isDocument(doc))
-            throw new Error(
-                `Replace expected to receive doc of type <Document> instead got type <${typeof doc}>`
-            );
-
-        const _replace = tree => {
-            // Nothing left to search, return null
-            if (!tree.elements || !Array.isArray(tree.elements) || tree.elements.length === 0)
-                return false;
-
-            // Search elements
-            for (let i in tree.elements) {
-                const elem = tree.elements[i];
-                // Check if this is the desired element
-                if (elem.name === doc._dom.name) {
-                    // Check if attributes match
-                    if (doc._dom.attributes) {
-                        let attrMatch = true;
-                        for (let key of Object.keys(doc._dom.attributes)) {
-                            if (
-                                !elem.attributes[key] ||
-                                elem.attributes[key] !== doc._dom.attributes[key]
-                            )
-                                attrMatch = false;
-                        }
-
-                        // Attributes match so return subtree
-                        if (attrMatch) {
-                            tree.elements[i] = doc.dom;
-                            this._mutable_dom = clone(this._dom);
-                            return true;
-                        }
-                    }
-                } else {
-                    if (_replace(elem)) return true;
-                }
-            }
-            return false;
-        };
-
-        return _replace(this._dom);
-    }
-
-    /**
      * Appends element to doc._dom.elements
      *
      * @param {Document} doc
@@ -267,15 +213,22 @@ class Document {
                 `Append expected to receive doc of type <Document> instead got type <${typeof doc}>`
             );
 
-        if (this._mutable_dom.elements && Array.isArray(this._mutable_dom.elements))
-            this._mutable_dom.elements.push(clone(doc.dom));
-        else this._mutable_dom.elements = [clone(doc.dom)];
-
-        this._dom = clone(this._mutable_dom);
+        if (this._dom.elements && Array.isArray(this._dom.elements))
+            this._dom.elements.push(doc.dom);
+        else this._dom.elements = [doc.dom];
 
         return this;
     }
 
+    /**
+     * Adds a tag to passed document
+     *
+     * @param {string} tagname
+     * @param {object} [options={}]
+     * @param {string} [prog=null]
+     * @param {string} [description=null]
+     * @memberof Document
+     */
     addTag(tagname, options = {}, prog = null, description = null) {
         if (typeof tagname !== "string")
             throw new Error(
@@ -346,15 +299,13 @@ class Document {
 
         if (tags) tags.append(tag);
         else
-            tags = new Document(null, {
-                type: "element",
-                name: "Tags"
-            }).append(tag);
+            target.append(
+                new Document(null, {
+                    type: "element",
+                    name: "Tags"
+                }).append(tag)
+            );
         /* eslint-enable indent */
-
-        // Update up the render chain
-        target.replace(tags);
-        this.replace(target);
     }
 
     /**
