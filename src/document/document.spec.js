@@ -69,7 +69,8 @@ describe("Document Class", () => {
         });
 
         test("findOne: Rejects Invalid Inputs", () => {
-            const fn = (type, attr, tree) => () => docFull.findOne(type, attr, tree);
+            const fn = (type, attr, tree, ignore = []) => () =>
+                docFull.findOne(type, attr, tree, ignore);
 
             expect(fn(12, null, null)).toThrow();
             expect(fn("Controller", null, null)).not.toThrow();
@@ -77,6 +78,8 @@ describe("Document Class", () => {
             expect(fn("Controller", { Name: "another" }, null)).not.toThrow();
             expect(fn("Controller", { Name: "another" }, 12)).toThrow();
             expect(fn("Controller", { Name: "another" }, {})).not.toThrow();
+            expect(fn("Controller", { Name: "another" }, {}, "throw")).toThrow();
+            expect(fn("Controller", { Name: "another" }, {}, ["Program"])).not.toThrow();
         });
 
         test("find: Finds Document Elements and Returns New Document", () => {
@@ -93,7 +96,7 @@ describe("Document Class", () => {
             expect(docEmpty.find("Member", { Name: "Push" })).toBeNull();
 
             expect(docFull.find("Member", { Name: "Push" })).toMatchSnapshot();
-            expect(docFull.find("Member")).toMatchSnapshot();
+            expect(docFull.find("Member", null, null, ["Controller"])).toMatchSnapshot();
 
             expect(
                 docFull.find("Controller")[0].find("Member", { Name: "Push" })
@@ -102,7 +105,8 @@ describe("Document Class", () => {
         });
 
         test("find: Rejects Invalid Inputs", () => {
-            const fn = (type, attr, tree) => () => docFull.find(type, attr, tree);
+            const fn = (type, attr, tree, ignore = []) => () =>
+                docFull.find(type, attr, tree, ignore);
 
             expect(fn(12, null, null)).toThrow();
             expect(fn("Controller", null, null)).not.toThrow();
@@ -110,6 +114,8 @@ describe("Document Class", () => {
             expect(fn("Controller", { Name: "another" }, null)).not.toThrow();
             expect(fn("Controller", { Name: "another" }, 12)).toThrow();
             expect(fn("Controller", { Name: "another" }, {})).not.toThrow();
+            expect(fn("Controller", { Name: "another" }, {}, "Program")).toThrow();
+            expect(fn("Member", { Name: "another" }, {}, ["DataTypes"])).not.toThrow();
         });
 
         test("append: Throws on Invalid Inputs", () => {
@@ -172,7 +178,7 @@ describe("Document Class", () => {
             expect(fn("hello", { a: 6 }, null, "it is a tag")).not.toThrow();
         });
 
-        test("addTag: Throws if No Program of Controller Element Exists", () => {
+        test("addTag: Throws if No Program or Controller Element Exists", () => {
             const fn_cont = () =>
                 new Document(null, {
                     type: "element",
@@ -212,14 +218,49 @@ describe("Document Class", () => {
             docEmpty.addTag("tag1", {}, null, "A cool tag 1");
             expect(docEmpty).toMatchSnapshot();
 
-            docEmpty.addTag(
-                "tag2",
-                { AliasFor: "tag1", TagType: "Alias" },
-                "hello"
-            );
+            docEmpty.addTag("tag2", { AliasFor: "tag1", TagType: "Alias" }, "hello");
             expect(docEmpty).toMatchSnapshot();
 
-            docEmpty.addTag("tag3", {}, null, "A cool tag 1");
+            docEmpty.addTag("tag3", {}, null, "A cool tag 3");
+            expect(docEmpty).toMatchSnapshot();
+        });
+
+        test("addProgram: Throws on Invalid Inputs", () => {
+            const fn = (prog, desc = null, use = "Context") => () => docEmpty.addProgram(prog, desc, use);
+
+            expect(fn(12)).toThrow();
+            expect(fn("hello", 12)).toThrow();
+            expect(fn("hello", "saying hello", 12)).toThrow();
+            expect(fn("hello", "saying hello", "notContext")).toThrow();
+            expect(fn("hello", "saying hello")).not.toThrow();
+
+            const tag = new Document(null, {
+                type: "element",
+                name: "Tag",
+                attributes: {
+                    Name: "someTag"
+                },
+                elements: []
+            });
+
+            expect(() => tag.addProgram("hello", "saying hello")).toThrow();
+        });
+
+        test("addProgram: Throws if No Program or Controller Element Exists", () => {
+            const fn = () => new Document(null, {
+                    type: "element",
+                    name: "Tags",
+                    elements: []
+                }).addProgram("hello");
+
+            expect(fn).toThrow();
+        });
+
+        test("addProgram: Performs Desired Function", () => {
+            docEmpty.addProgram("prog1");
+            expect(docEmpty).toMatchSnapshot();
+
+            docEmpty.addProgram("prog2");
             expect(docEmpty).toMatchSnapshot();
         });
 

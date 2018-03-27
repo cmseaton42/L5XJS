@@ -71,7 +71,7 @@ class Document {
      * @returns {object|null} found documents
      * @memberof Document
      */
-    findOne(type, attr = null, search_tree = null) {
+    findOne(type, attr = null, search_tree = null, ignore = []) {
         // Validate Inputs
         if (typeof type !== "string")
             throw new Error(
@@ -88,6 +88,11 @@ class Document {
                 `Find expected a search tree of type <Object> or null instead got <${typeof search_tree}>`
             );
 
+        if (!Array.isArray(ignore))
+            throw new Error(
+                `Find expected a ignore of type <Array> instead got <${typeof ignore}>`
+            );
+
         // If no tree is passed then search from document root
         let tree = search_tree ? search_tree : this._dom;
 
@@ -96,30 +101,28 @@ class Document {
 
         // Search elements
         for (let elem of tree.elements) {
-            // Check if this is the desired element
-            if (elem.name === type) {
-                // Check if attributes match
-                if (attr) {
-                    let attrMatch = true;
-                    for (let key of Object.keys(attr)) {
-                        if (!elem.attributes[key] || elem.attributes[key] !== attr[key])
-                            attrMatch = false;
+            if (!ignore.includes(elem.name)) {
+                // Check if this is the desired element
+                if (elem.name === type) {
+                    // Check if attributes match
+                    if (attr) {
+                        let attrMatch = true;
+                        for (let key of Object.keys(attr)) {
+                            if (!elem.attributes[key] || elem.attributes[key] !== attr[key])
+                                attrMatch = false;
+                        }
+
+                        // Attributes match so return subtree
+                        if (attrMatch) return new Document(null, elem);
+                    } else {
+                        // No attributes need to match
+                        return new Document(null, elem);
                     }
-
-                    // Attributes match so return subtree
-                    if (attrMatch) return elem;
-                } else {
-                    // No attributes need to match
-                    return elem;
                 }
-            }
+                // Search branches for desired element
+                const found = this.findOne(type, attr, elem);
 
-            // Search branches for desired element
-            const found = this.findOne(type, attr, elem);
-
-            if (found) {
-                if (Document.isDocument(found)) return found;
-                else return new Document(null, found);
+                if (found) return found;
             }
         }
 
@@ -133,10 +136,11 @@ class Document {
      * @param {string} type - Type of element to look for (e.g. Controller, Datatype, etc)
      * @param {object} [attr=null] - Object of attributes to match in element
      * @param {object} [search_tree=null] - Tree to search on
+     * @param {Array} [ignore=null] - Names to Ignore
      * @returns {Array|null} found documents
      * @memberof Document
      */
-    find(type, attr = null, search_tree = null) {
+    find(type, attr = null, search_tree = null, ignore = []) {
         // Validate Inputs
         if (typeof type !== "string")
             throw new Error(
@@ -153,6 +157,11 @@ class Document {
                 `Find expected a search tree of type <Object> or null instead got <${typeof search_tree}>`
             );
 
+        if (!Array.isArray(ignore))
+            throw new Error(
+                `Find expected a ignore of type <Array> instead got <${typeof ignore}>`
+            );
+
         let returnArray = [];
 
         // Search function definiton
@@ -167,26 +176,29 @@ class Document {
 
             // Search elements
             for (let elem of search_tree.elements) {
-                // Check if this is the desired element
-                if (elem.name === type) {
-                    // Check if attributes match
-                    if (attr) {
-                        let attrMatch = true;
-                        for (let key of Object.keys(attr)) {
-                            if (!elem.attributes[key] || elem.attributes[key] !== attr[key])
-                                attrMatch = false;
-                        }
+                // explore tree if not in ignores
+                if (!ignore.includes(elem.name)) {
+                    // Check if this is the desired element
+                    if (elem.name === type) {
+                        // Check if attributes match
+                        if (attr) {
+                            let attrMatch = true;
+                            for (let key of Object.keys(attr)) {
+                                if (!elem.attributes[key] || elem.attributes[key] !== attr[key])
+                                    attrMatch = false;
+                            }
 
-                        // Attributes match so return subtree
-                        if (attrMatch) {
+                            // Attributes match so return subtree
+                            if (attrMatch) {
+                                returnArray.push(new Document(null, elem));
+                            }
+                        } else {
+                            // No attributes need to match
                             returnArray.push(new Document(null, elem));
                         }
                     } else {
-                        // No attributes need to match
-                        returnArray.push(new Document(null, elem));
+                        _find(type, attr, elem);
                     }
-                } else {
-                    _find(type, attr, elem);
                 }
             }
         };
@@ -294,7 +306,9 @@ class Document {
         });
 
         // Get tags element from target
-        let tags = target.findOne("Tags");
+        let tags = prog
+            ? target.findOne("Tags", {}, null)
+            : target.findOne("Tags", {}, null, ["Programs"]);
 
         if (tags) tags.append(tag);
         else
@@ -303,6 +317,73 @@ class Document {
                     type: "element",
                     name: "Tags"
                 }).append(tag)
+            );
+        /* eslint-enable indent */
+    }
+
+    addProgram(progname, description = null, use = "Context") {
+        if (typeof progname !== "string")
+            throw new Error(
+                `addTag expected tagname of type <String> instead got <${typeof tagname}>`
+            );
+
+        if (typeof use !== "string")
+            throw new Error(`addProgram expected use of type <String> instead got <${typeof use}>`);
+
+        if (use !== "Context" && use !== "Target") {
+            throw new Error(
+                `addProgram expected use to be 'Context' or 'Target' instead got '${use}'`
+            );
+        }
+
+        if (description && typeof description !== "string")
+            throw new Error(
+                `addProgram expected description of type <String> instead got <${typeof description}>`
+            );
+
+        /* eslint-disable indent */
+        // Find target to mount new tag too
+        const target = this.findOne("Controller");
+
+        if (!target)
+            throw new Error(
+                `addProgram could not find a Controller target element to mount program`
+            );
+
+        // Build new tag element
+        const program = new Document(null, {
+            type: "element",
+            name: "Program",
+            attributes: {
+                Use: use,
+                Name: progname
+            },
+            elements: description
+                ? [
+                      {
+                          type: "element",
+                          name: "Description",
+                          elements: [
+                              {
+                                  type: "cdata",
+                                  cdata: description
+                              }
+                          ]
+                      }
+                  ]
+                : []
+        });
+
+        // Get tags element from target
+        let programs = target.findOne("Programs");
+
+        if (programs) programs.append(program);
+        else
+            target.append(
+                new Document(null, {
+                    type: "element",
+                    name: "Programs"
+                }).append(program)
             );
         /* eslint-enable indent */
     }

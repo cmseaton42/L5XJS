@@ -1,5 +1,116 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Document Class Instance Methods addProgram: Performs Desired Function 1`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "prog1",
+                      "Use": "Context",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
+exports[`Document Class Instance Methods addProgram: Performs Desired Function 2`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "prog1",
+                      "Use": "Context",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Name": "prog2",
+                      "Use": "Context",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
 exports[`Document Class Instance Methods addTag: Performs Desired Function 1`] = `
 Document {
   "_dom": Object {
@@ -222,29 +333,6 @@ Document {
                             "name": "Tag",
                             "type": "element",
                           },
-                          Object {
-                            "attributes": Object {
-                              "Class": "Standard",
-                              "DataType": "DINT",
-                              "ExternalAccess": "Read/Write",
-                              "Name": "tag3",
-                              "TagType": "Base",
-                            },
-                            "elements": Array [
-                              Object {
-                                "elements": Array [
-                                  Object {
-                                    "cdata": "A cool tag 1",
-                                    "type": "cdata",
-                                  },
-                                ],
-                                "name": "Description",
-                                "type": "element",
-                              },
-                            ],
-                            "name": "Tag",
-                            "type": "element",
-                          },
                         ],
                         "name": "Tags",
                         "type": "element",
@@ -272,6 +360,29 @@ Document {
                         "elements": Array [
                           Object {
                             "cdata": "A cool tag 1",
+                            "type": "cdata",
+                          },
+                        ],
+                        "name": "Description",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Tag",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "DataType": "DINT",
+                      "ExternalAccess": "Read/Write",
+                      "Name": "tag3",
+                      "TagType": "Base",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "cdata": "A cool tag 3",
                             "type": "cdata",
                           },
                         ],
@@ -677,226 +788,7 @@ Array [
 ]
 `;
 
-exports[`Document Class Instance Methods find: Finds Document Elements and Returns New Document 4`] = `
-Array [
-  Document {
-    "_dom": Object {
-      "attributes": Object {
-        "DataType": "SINT",
-        "Dimension": "0",
-        "ExternalAccess": "Read/Write",
-        "Hidden": "true",
-        "Name": "ZZZZZZZZZZPB_OneButt0",
-        "Radix": "Decimal",
-      },
-      "name": "Member",
-      "type": "element",
-    },
-    "class_id": "ba7cc09d99f4a84810458bc89abf612f",
-  },
-  Document {
-    "_dom": Object {
-      "attributes": Object {
-        "BitNumber": "0",
-        "DataType": "BIT",
-        "Dimension": "0",
-        "ExternalAccess": "Read/Write",
-        "Hidden": "false",
-        "Name": "Push",
-        "Radix": "Decimal",
-        "Target": "ZZZZZZZZZZPB_OneButt0",
-      },
-      "elements": Array [
-        Object {
-          "elements": Array [
-            Object {
-              "cdata": "*",
-              "type": "cdata",
-            },
-          ],
-          "name": "Description",
-          "type": "element",
-        },
-      ],
-      "name": "Member",
-      "type": "element",
-    },
-    "class_id": "ba7cc09d99f4a84810458bc89abf612f",
-  },
-  Document {
-    "_dom": Object {
-      "attributes": Object {
-        "BitNumber": "1",
-        "DataType": "BIT",
-        "Dimension": "0",
-        "ExternalAccess": "Read/Write",
-        "Hidden": "false",
-        "Name": "State",
-        "Radix": "Decimal",
-        "Target": "ZZZZZZZZZZPB_OneButt0",
-      },
-      "elements": Array [
-        Object {
-          "elements": Array [
-            Object {
-              "cdata": "*",
-              "type": "cdata",
-            },
-          ],
-          "name": "Description",
-          "type": "element",
-        },
-      ],
-      "name": "Member",
-      "type": "element",
-    },
-    "class_id": "ba7cc09d99f4a84810458bc89abf612f",
-  },
-  Document {
-    "_dom": Object {
-      "attributes": Object {
-        "BitNumber": "2",
-        "DataType": "BIT",
-        "Dimension": "0",
-        "ExternalAccess": "Read/Write",
-        "Hidden": "false",
-        "Name": "Visibility",
-        "Radix": "Decimal",
-        "Target": "ZZZZZZZZZZPB_OneButt0",
-      },
-      "elements": Array [
-        Object {
-          "elements": Array [
-            Object {
-              "cdata": "*",
-              "type": "cdata",
-            },
-          ],
-          "name": "Description",
-          "type": "element",
-        },
-      ],
-      "name": "Member",
-      "type": "element",
-    },
-    "class_id": "ba7cc09d99f4a84810458bc89abf612f",
-  },
-  Document {
-    "_dom": Object {
-      "attributes": Object {
-        "BitNumber": "3",
-        "DataType": "BIT",
-        "Dimension": "0",
-        "ExternalAccess": "Read/Write",
-        "Hidden": "false",
-        "Name": "Ind",
-        "Radix": "Decimal",
-        "Target": "ZZZZZZZZZZPB_OneButt0",
-      },
-      "elements": Array [
-        Object {
-          "elements": Array [
-            Object {
-              "cdata": "*",
-              "type": "cdata",
-            },
-          ],
-          "name": "Description",
-          "type": "element",
-        },
-      ],
-      "name": "Member",
-      "type": "element",
-    },
-    "class_id": "ba7cc09d99f4a84810458bc89abf612f",
-  },
-  Document {
-    "_dom": Object {
-      "attributes": Object {
-        "BitNumber": "4",
-        "DataType": "BIT",
-        "Dimension": "0",
-        "ExternalAccess": "Read/Write",
-        "Hidden": "false",
-        "Name": "Interlock",
-        "Radix": "Decimal",
-        "Target": "ZZZZZZZZZZPB_OneButt0",
-      },
-      "elements": Array [
-        Object {
-          "elements": Array [
-            Object {
-              "cdata": "*",
-              "type": "cdata",
-            },
-          ],
-          "name": "Description",
-          "type": "element",
-        },
-      ],
-      "name": "Member",
-      "type": "element",
-    },
-    "class_id": "ba7cc09d99f4a84810458bc89abf612f",
-  },
-  Document {
-    "_dom": Object {
-      "attributes": Object {
-        "BitNumber": "5",
-        "DataType": "BIT",
-        "Dimension": "0",
-        "ExternalAccess": "Read/Write",
-        "Hidden": "false",
-        "Name": "ONS",
-        "Radix": "Decimal",
-        "Target": "ZZZZZZZZZZPB_OneButt0",
-      },
-      "elements": Array [
-        Object {
-          "elements": Array [
-            Object {
-              "cdata": "*",
-              "type": "cdata",
-            },
-          ],
-          "name": "Description",
-          "type": "element",
-        },
-      ],
-      "name": "Member",
-      "type": "element",
-    },
-    "class_id": "ba7cc09d99f4a84810458bc89abf612f",
-  },
-  Document {
-    "_dom": Object {
-      "attributes": Object {
-        "DataType": "TIMER",
-        "Dimension": "0",
-        "ExternalAccess": "Read/Write",
-        "Hidden": "false",
-        "Name": "Tmr",
-        "Radix": "NullType",
-      },
-      "elements": Array [
-        Object {
-          "elements": Array [
-            Object {
-              "cdata": "*",
-              "type": "cdata",
-            },
-          ],
-          "name": "Description",
-          "type": "element",
-        },
-      ],
-      "name": "Member",
-      "type": "element",
-    },
-    "class_id": "ba7cc09d99f4a84810458bc89abf612f",
-  },
-]
-`;
+exports[`Document Class Instance Methods find: Finds Document Elements and Returns New Document 4`] = `null`;
 
 exports[`Document Class Instance Methods find: Finds Document Elements and Returns New Document 5`] = `
 Array [
