@@ -4,7 +4,16 @@ const { resolve } = require("path");
 const { hash } = require("../utilities");
 const { xml2js, js2xml } = require("xml-js");
 
-const ElementTypes = ["Controller", "DataType", "Tag", "Member", "Program", "Routine", "Rung", "RLLContent"];
+// const ElementTypes = [
+//     "Controller",
+//     "DataType",
+//     "Tag",
+//     "Member",
+//     "Program",
+//     "Routine",
+//     "Rung",
+//     "RLLContent"
+// ];
 
 class Document {
     constructor(filepath = null, document_tree = null) {
@@ -258,13 +267,94 @@ class Document {
                 `Append expected to receive doc of type <Document> instead got type <${typeof doc}>`
             );
 
-        if (this._dom.elements && Array.isArray(this._dom.elements))
-            this._dom.elements.push(clone(doc.dom));
-        else this._dom.elements = [clone(doc.dom)];
+        if (this._mutable_dom.elements && Array.isArray(this._mutable_dom.elements))
+            this._mutable_dom.elements.push(clone(doc.dom));
+        else this._mutable_dom.elements = [clone(doc.dom)];
 
-        this._mutable_dom = clone(this._dom);
+        this._dom = clone(this._mutable_dom);
 
         return this;
+    }
+
+    addTag(tagname, options = {}, prog = null, description = null) {
+        if (typeof tagname !== "string")
+            throw new Error(
+                `addTag expected tagname of type <String> instead got <${typeof tagname}>`
+            );
+
+        if (options && typeof options !== "object")
+            throw new Error(
+                `addTag expected options of type <Object> instead got <${typeof options}>`
+            );
+
+        if (prog && typeof prog !== "string")
+            throw new Error(`addTag expected prog of type <String> instead got <${typeof prog}>`);
+
+        if (description && typeof description !== "string")
+            throw new Error(
+                `addTag expected description of type <String> instead got <${typeof description}>`
+            );
+
+        // Merge defaults with passed options object
+        const attributes = Object.assign(
+            {},
+            { TagType: "Base", DataType: "DINT", Class: "Standard", ExternalAccess: "Read/Write" },
+            options
+        );
+
+        /* eslint-disable indent */
+        // Find target to mount new tag too
+        const target = prog
+            ? this.findOne("Program", {
+                  Name: prog
+              })
+            : this.findOne("Controller");
+
+        if (!target)
+            throw new Error(
+                `addTag could not find a ${
+                    prog ? "Program" : "Controller"
+                } target element to mount tag`
+            );
+
+        // Build new tag element
+        const tag = new Document(null, {
+            type: "element",
+            name: "Tag",
+            attributes: {
+                ...attributes,
+                Name: tagname
+            },
+            elements: description
+                ? [
+                      {
+                          type: "element",
+                          name: "Description",
+                          elements: [
+                              {
+                                  type: "cdata",
+                                  cdata: description
+                              }
+                          ]
+                      }
+                  ]
+                : []
+        });
+
+        // Get tags element from target
+        let tags = target.findOne("Tags");
+
+        if (tags) tags.append(tag);
+        else
+            tags = new Document(null, {
+                type: "element",
+                name: "Tags"
+            }).append(tag);
+        /* eslint-enable indent */
+
+        // Update up the render chain
+        target.replace(tags);
+        this.replace(target);
     }
 
     /**

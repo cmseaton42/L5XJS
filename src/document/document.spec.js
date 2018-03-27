@@ -128,13 +128,71 @@ describe("Document Class", () => {
                     TagType: "Base"
                 }
             });
-            
+
             const newTags = docEmpty.findOne("Controller").append(tags);
             expect(newTags).toMatchSnapshot();
 
             const comment = tags.append(tags);
-            
+
             expect(comment).toMatchSnapshot();
+        });
+
+        test("addTag: Throws on Invalid Inputs", () => {
+            const fn = (tag, opt = {}, prog = null, desc = null) => () =>
+                docEmpty.addTag(tag, opt, prog, desc);
+
+            expect(fn(12)).toThrow();
+            expect(fn("hello", 12)).toThrow();
+            expect(fn("hello", { a: 6 }, 12)).toThrow();
+            expect(fn("hello", { a: 6 }, null, 12)).toThrow();
+            expect(fn("hello", { a: 6 }, "hello", 12)).toThrow();
+
+            docEmpty.append(
+                new Document(null, {
+                    type: "element",
+                    name: "Programs",
+                    elements: [
+                        {
+                            type: "element",
+                            name: "Program",
+                            attributes: {
+                                Name: "hello"
+                            },
+                            elements: []
+                        }
+                    ]
+                })
+            );
+
+            expect(fn("hello", { a: 6 }, "hello", "it is a tag")).not.toThrow();
+            expect(fn("hello", { a: 6 }, null, "it is a tag")).not.toThrow();
+        });
+
+        test("addTag: Performs Desired Function", () => {
+            const controller = docEmpty.findOne("Controller").append(
+                new Document(null, {
+                    type: "element",
+                    name: "Programs",
+                    elements: [
+                        {
+                            type: "element",
+                            name: "Program",
+                            attributes: {
+                                Name: "hello"
+                            },
+                            elements: []
+                        }
+                    ]
+                })
+            );
+
+            docEmpty.replace(controller);
+
+            docEmpty.addTag("tag1", {}, null, "A cool tag 1");
+            expect(docEmpty).toMatchSnapshot();
+
+            docEmpty.addTag("tag2", { AliasFor: "tag1", TagType: "Alias" }, "hello", "A cool tag 2");
+            expect(docEmpty).toMatchSnapshot();
         });
 
         test("replace: Throws on Invalid Inputs", () => {

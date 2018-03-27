@@ -1,5 +1,193 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Document Class Instance Methods addTag: Performs Desired Function 1`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "hello",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "_mutable_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "hello",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
+exports[`Document Class Instance Methods addTag: Performs Desired Function 2`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "hello",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "_mutable_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "hello",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
 exports[`Document Class Instance Methods append: Appends New Dom Element 1`] = `
 Document {
   "_dom": Object {
