@@ -347,7 +347,7 @@ class Document {
 
         if (!target)
             throw new Error(
-                `addProgram could not find a Controller target element to mount program`
+                "addProgram could not find a Controller target element to mount program"
             );
 
         // Build new tag element

@@ -226,7 +226,8 @@ describe("Document Class", () => {
         });
 
         test("addProgram: Throws on Invalid Inputs", () => {
-            const fn = (prog, desc = null, use = "Context") => () => docEmpty.addProgram(prog, desc, use);
+            const fn = (prog, desc = null, use = "Context") => () =>
+                docEmpty.addProgram(prog, desc, use);
 
             expect(fn(12)).toThrow();
             expect(fn("hello", 12)).toThrow();
@@ -247,7 +248,8 @@ describe("Document Class", () => {
         });
 
         test("addProgram: Throws if No Program or Controller Element Exists", () => {
-            const fn = () => new Document(null, {
+            const fn = () =>
+                new Document(null, {
                     type: "element",
                     name: "Tags",
                     elements: []
