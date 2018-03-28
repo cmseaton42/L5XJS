@@ -319,6 +319,8 @@ class Document {
                 }).append(tag)
             );
         /* eslint-enable indent */
+
+        return tag;
     }
 
     /**
@@ -395,6 +397,8 @@ class Document {
                 }).append(program)
             );
         /* eslint-enable indent */
+
+        return program;
     }
 
     /**
@@ -480,6 +484,8 @@ class Document {
                 }).append(routine)
             );
         /* eslint-enable indent */
+
+        return routine;
     }
 
     /**
@@ -568,6 +574,8 @@ class Document {
 
         target.append(rllContent);
         /* eslint-enable indent */
+
+        return rung;
     }
 
     /**
