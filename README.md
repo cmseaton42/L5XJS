@@ -16,6 +16,34 @@
 
 A simple API designed to build and parse Allen Bradley *.L5X* files in order to empower users to automate PLC code generation.
 
-> **NOTE**
->
-> More documentation to follow as project matures. 
+## Prerequisites
+
+latest version of [NodeJS](https://nodejs.org/en/)
+
+## Getting Started
+
+Install with npm
+
+```
+npm install l5x-js --save
+```
+## The API
+
+How the heck does this thing work anyway? Great question!
+
+
+
+## Built With
+
+* [NodeJS](https://nodejs.org/en/) - The Engine
+* [javascript - ES2017](https://maven.apache.org/) - The Language
+
+## Contributers
+
+* **Canaan Seaton** - *Owner* - [GitHub Profile](https://github.com/cmseaton42) - [Personal Website](http://www.canaanseaton.com/)
+
+Wanna *become* a contributor? [Here's](https://github.com/cmseaton42/node-ethernet-ip/blob/master/CONTRIBUTING.md) how!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENCE](https://github.com/cmseaton42/node-ethernet-ip/blob/master/LICENSE) file for details

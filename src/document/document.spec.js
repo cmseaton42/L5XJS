@@ -7,15 +7,15 @@ describe("Document Class", () => {
         it("Accepts Proper Input", () => {
             const fn = arg => () => new Document(arg);
 
-            expect(fn("./__test-data__/fakeFile.L5X")).toThrow();
+            expect(fn("./__test-data__/datatype.L5X")).toThrow();
             expect(fn(57)).toThrow();
-            expect(fn("./__test-data__/datatype.L5X")).not.toThrow();
+            expect(fn(path.resolve(__dirname, "./__test-data__/datatype.L5X"))).not.toThrow();
             expect(fn()).not.toThrow();
         });
 
         it("Initializes with Desired Document Model", () => {
             const doc1 = new Document();
-            const doc2 = new Document("./__test-data__/datatype.L5X");
+            const doc2 = new Document(path.resolve(__dirname, "./__test-data__/datatype.L5X"));
 
             expect(doc1._dom).toMatchSnapshot();
             expect(doc2._dom).toMatchSnapshot();
@@ -37,7 +37,7 @@ describe("Document Class", () => {
         let docEmpty;
 
         beforeEach(() => {
-            docFull = new Document("./__test-data__/datatype.L5X");
+            docFull = new Document(path.resolve(__dirname, "./__test-data__/datatype.L5X"));
             docEmpty = new Document();
         });
 
@@ -335,7 +335,7 @@ describe("Document Class", () => {
         });
 
         test("export: Exported Data is Correct", () => {
-            docFull.export("./__test-data__/generated_datatype.L5X");
+            docFull.export(path.resolve(__dirname, "./__test-data__/generated_datatype.L5X"));
 
             let original = fs.readFileSync(
                 path.resolve(__dirname, "./__test-data__/datatype.L5X"),

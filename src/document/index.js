@@ -23,7 +23,7 @@ class Document {
         // --> package 'xml-js' will understand
         if (filepath) {
             // Start from existing L5X file
-            this._dom = xml2js(fs.readFileSync(resolve(__dirname, filepath)), "utf8");
+            this._dom = xml2js(fs.readFileSync(resolve(filepath)), "utf8");
         } else if (document_tree) {
             // Set document to incoming document tree
             this._dom = document_tree;
@@ -595,7 +595,7 @@ class Document {
      * @memberof Document
      */
     export(filepath) {
-        fs.writeFileSync(resolve(__dirname, filepath), this.toString());
+        fs.writeFileSync(resolve(filepath), this.toString());
     }
 
     /**
