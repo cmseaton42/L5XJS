@@ -525,12 +525,14 @@ class Document {
         // Get element from target
         let rllContent = target.findOne("RLLContent");
 
-        if (!rllContent)
+        if (!rllContent) {
             rllContent = new Document(null, {
                 type: "element",
                 name: "RLLContent",
                 elements: []
             });
+            target.append(rllContent);
+        }
 
         // Build new tag element
         const rung = new Document(null, {
@@ -571,8 +573,6 @@ class Document {
         );
 
         rllContent.append(rung);
-
-        target.append(rllContent);
         /* eslint-enable indent */
 
         return rung;

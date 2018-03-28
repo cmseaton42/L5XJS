@@ -479,62 +479,6 @@ Document {
                                 "name": "RLLContent",
                                 "type": "element",
                               },
-                              Object {
-                                "elements": Array [
-                                  Object {
-                                    "attributes": Object {
-                                      "Number": 0,
-                                      "Type": "N",
-                                    },
-                                    "elements": Array [
-                                      Object {
-                                        "elements": Array [
-                                          Object {
-                                            "cdata": "a cool rung",
-                                            "type": "cdata",
-                                          },
-                                        ],
-                                        "name": "Description",
-                                        "type": "element",
-                                      },
-                                      Object {
-                                        "elements": Array [
-                                          Object {
-                                            "cdata": "XIC(TestTag)NOP();",
-                                            "type": "cdata",
-                                          },
-                                        ],
-                                        "name": "Text",
-                                        "type": "element",
-                                      },
-                                    ],
-                                    "name": "Rung",
-                                    "type": "element",
-                                  },
-                                  Object {
-                                    "attributes": Object {
-                                      "Number": 1,
-                                      "Type": "N",
-                                    },
-                                    "elements": Array [
-                                      Object {
-                                        "elements": Array [
-                                          Object {
-                                            "cdata": "XIC(TestTag)NOP();",
-                                            "type": "cdata",
-                                          },
-                                        ],
-                                        "name": "Text",
-                                        "type": "element",
-                                      },
-                                    ],
-                                    "name": "Rung",
-                                    "type": "element",
-                                  },
-                                ],
-                                "name": "RLLContent",
-                                "type": "element",
-                              },
                             ],
                             "name": "Routine",
                             "type": "element",
