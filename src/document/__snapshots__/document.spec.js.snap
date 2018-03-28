@@ -35,6 +35,7 @@ Document {
                           Object {
                             "attributes": Object {
                               "Name": "r1",
+                              "Type": "RLL",
                               "Use": "Context",
                             },
                             "elements": Array [
@@ -113,6 +114,7 @@ Document {
                           Object {
                             "attributes": Object {
                               "Name": "r1",
+                              "Type": "RLL",
                               "Use": "Context",
                             },
                             "elements": Array [
@@ -133,6 +135,7 @@ Document {
                           Object {
                             "attributes": Object {
                               "Name": "r2",
+                              "Type": "RLL",
                               "Use": "Context",
                             },
                             "elements": Array [],
@@ -255,6 +258,292 @@ Document {
                       "Use": "Context",
                     },
                     "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
+exports[`Document Class Instance Methods addRung: Performs Desired Function 1`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "prog",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "test",
+                              "Type": "RLL",
+                              "Use": "Context",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [
+                                  Object {
+                                    "attributes": Object {
+                                      "Number": 0,
+                                      "Type": "N",
+                                    },
+                                    "elements": Array [
+                                      Object {
+                                        "elements": Array [
+                                          Object {
+                                            "cdata": "a cool rung",
+                                            "type": "cdata",
+                                          },
+                                        ],
+                                        "name": "Description",
+                                        "type": "element",
+                                      },
+                                      Object {
+                                        "elements": Array [
+                                          Object {
+                                            "cdata": "XIC(TestTag)NOP();",
+                                            "type": "cdata",
+                                          },
+                                        ],
+                                        "name": "Text",
+                                        "type": "element",
+                                      },
+                                    ],
+                                    "name": "Rung",
+                                    "type": "element",
+                                  },
+                                ],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "ba7cc09d99f4a84810458bc89abf612f",
+}
+`;
+
+exports[`Document Class Instance Methods addRung: Performs Desired Function 2`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Name": "prog",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "test",
+                              "Type": "RLL",
+                              "Use": "Context",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [
+                                  Object {
+                                    "attributes": Object {
+                                      "Number": 0,
+                                      "Type": "N",
+                                    },
+                                    "elements": Array [
+                                      Object {
+                                        "elements": Array [
+                                          Object {
+                                            "cdata": "a cool rung",
+                                            "type": "cdata",
+                                          },
+                                        ],
+                                        "name": "Description",
+                                        "type": "element",
+                                      },
+                                      Object {
+                                        "elements": Array [
+                                          Object {
+                                            "cdata": "XIC(TestTag)NOP();",
+                                            "type": "cdata",
+                                          },
+                                        ],
+                                        "name": "Text",
+                                        "type": "element",
+                                      },
+                                    ],
+                                    "name": "Rung",
+                                    "type": "element",
+                                  },
+                                  Object {
+                                    "attributes": Object {
+                                      "Number": 1,
+                                      "Type": "N",
+                                    },
+                                    "elements": Array [
+                                      Object {
+                                        "elements": Array [
+                                          Object {
+                                            "cdata": "XIC(TestTag)NOP();",
+                                            "type": "cdata",
+                                          },
+                                        ],
+                                        "name": "Text",
+                                        "type": "element",
+                                      },
+                                    ],
+                                    "name": "Rung",
+                                    "type": "element",
+                                  },
+                                ],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                              Object {
+                                "elements": Array [
+                                  Object {
+                                    "attributes": Object {
+                                      "Number": 0,
+                                      "Type": "N",
+                                    },
+                                    "elements": Array [
+                                      Object {
+                                        "elements": Array [
+                                          Object {
+                                            "cdata": "a cool rung",
+                                            "type": "cdata",
+                                          },
+                                        ],
+                                        "name": "Description",
+                                        "type": "element",
+                                      },
+                                      Object {
+                                        "elements": Array [
+                                          Object {
+                                            "cdata": "XIC(TestTag)NOP();",
+                                            "type": "cdata",
+                                          },
+                                        ],
+                                        "name": "Text",
+                                        "type": "element",
+                                      },
+                                    ],
+                                    "name": "Rung",
+                                    "type": "element",
+                                  },
+                                  Object {
+                                    "attributes": Object {
+                                      "Number": 1,
+                                      "Type": "N",
+                                    },
+                                    "elements": Array [
+                                      Object {
+                                        "elements": Array [
+                                          Object {
+                                            "cdata": "XIC(TestTag)NOP();",
+                                            "type": "cdata",
+                                          },
+                                        ],
+                                        "name": "Text",
+                                        "type": "element",
+                                      },
+                                    ],
+                                    "name": "Rung",
+                                    "type": "element",
+                                  },
+                                ],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
                     "name": "Program",
                     "type": "element",
                   },

@@ -303,6 +303,37 @@ describe("Document Class", () => {
             expect(docEmpty).toMatchSnapshot();
         });
 
+        test("addRung: Throws on Invalid Inputs", () => {
+            docEmpty.addProgram("sample");
+            docEmpty.addLadderRoutine("test", "sample");
+
+            const program = docEmpty.findOne("Program", { Name: "sample" });
+
+            const fn = (content, rout, desc = null) => () => program.addRung(content, rout, desc);
+
+            expect(fn(12)).toThrow();
+            expect(fn("XIC(TestTag)NOP();")).toThrow();
+            expect(fn("XIC(TestTag)NOP();", 12)).toThrow();
+            expect(fn(12, "hello")).toThrow();
+            expect(fn("XIC(TestTag)NOP();", "prog", 12)).toThrow();
+            expect(fn("XIC(TestTag)NOP();", "prog")).toThrow();
+            expect(fn("XIC(TestTag)NOP();", "test", "saying hello")).not.toThrow();
+            expect(fn("XIC(TestTag)NOP();", "test")).not.toThrow();
+        });
+
+        test("addRung: Performs Desired Function", () => {
+            docEmpty.addProgram("prog");
+            docEmpty.addLadderRoutine("test", "prog");
+
+            const program = docEmpty.findOne("Program", { Name: "prog" });
+
+            program.addRung("XIC(TestTag)NOP();", "test", "a cool rung");
+            expect(docEmpty).toMatchSnapshot();
+
+            program.addRung("XIC(TestTag)NOP();", "test");
+            expect(docEmpty).toMatchSnapshot();
+        });
+
         test("export: Exported Data is Correct", () => {
             docFull.export("./__test-data__/generated_datatype.L5X");
 

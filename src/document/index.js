@@ -449,7 +449,8 @@ class Document {
             name: "Routine",
             attributes: {
                 Use: use,
-                Name: routname
+                Name: routname,
+                Type: "RLL"
             },
             elements: description
                 ? [
@@ -478,6 +479,94 @@ class Document {
                     name: "Routines"
                 }).append(routine)
             );
+        /* eslint-enable indent */
+    }
+
+    /**
+     * Adds rung to target routine
+     * - only if document has target program element
+     *
+     * @param {string} content
+     * @param {string} routine
+     * @param {string} [description=null]
+     * @memberof Document
+     */
+    addRung(content, routine, description = null) {
+        if (typeof content !== "string")
+            throw new Error(
+                `addRung expected content of type <String> instead got <${typeof content}>`
+            );
+
+        if (typeof routine !== "string")
+            throw new Error(
+                `addRung expected routine of type <String> instead got <${typeof routine}>`
+            );
+
+        if (description && typeof description !== "string")
+            throw new Error(
+                `addRung expected description of type <String> instead got <${typeof description}>`
+            );
+
+        /* eslint-disable indent */
+        // Find target to mount new tag too
+        const target = this.findOne("Routine", {
+            Name: routine
+        });
+
+        if (!target)
+            throw new Error("addRung could not find Routine target element to mount routine");
+
+        // Get element from target
+        let rllContent = target.findOne("RLLContent");
+
+        if (!rllContent)
+            rllContent = new Document(null, {
+                type: "element",
+                name: "RLLContent",
+                elements: []
+            });
+
+        // Build new tag element
+        const rung = new Document(null, {
+            type: "element",
+            name: "Rung",
+            attributes: {
+                Number: rllContent.dom.elements.length,
+                Type: "N"
+            },
+            elements: description
+                ? [
+                      {
+                          type: "element",
+                          name: "Description",
+                          elements: [
+                              {
+                                  type: "cdata",
+                                  cdata: description
+                              }
+                          ]
+                      }
+                  ]
+                : []
+        });
+
+        // Add content to rung
+        rung.append(
+            new Document(null, {
+                type: "element",
+                name: "Text",
+                elements: [
+                    {
+                        type: "cdata",
+                        cdata: content
+                    }
+                ]
+            })
+        );
+
+        rllContent.append(rung);
+
+        target.append(rllContent);
         /* eslint-enable indent */
     }
 
