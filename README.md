@@ -4,7 +4,7 @@
 
 <div align="center">
   <p>
-  <a href="https://www.npmjs.com/package/l5xjs"><img src="https://img.shields.io/npm/v/l5xjs.svg?style=flat-square" alt="npm" /></a>
+  <a href="https://www.npmjs.com/package/l5x-js"><img src="https://img.shields.io/npm/v/l5x-js.svg?style=flat-square" alt="npm" /></a>
   <a href="https://gitter.im/L5XJS/Lobby"><img src="https://img.shields.io/gitter/room/L5XJS/nw.js.svg?style=flat-square" alt="Gitter" /></a>
   <a href="https://github.com/cmseaton42/L5XJS/blob/master/LICENSE"><img src="https://img.shields.io/github/license/cmseaton42/L5XJS.svg?style=flat-square" alt="license" /></a>
   <img src="https://img.shields.io/travis/cmseaton42/L5XJS.svg?style=flat-square" alt="Travis" />
