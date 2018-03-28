@@ -595,7 +595,7 @@ class Document {
      * @memberof Document
      */
     export(filepath) {
-        fs.writeFileSync(resolve(filepath), this.toString());
+        fs.writeFileSync(resolve(filepath), this.toString(), "utf8");
     }
 
     /**
