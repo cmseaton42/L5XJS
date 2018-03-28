@@ -179,21 +179,21 @@ class Element {
     }
 
     /**
-     * Appends element to doc._dom.elements
+     * Appends element to elem._dom.elements
      *
-     * @param {Document} doc
+     * @param {Document} elem
      * @returns {Document} - this (for chaining)
      * @memberof Document
      */
-    append(doc) {
-        if (!Element.isElement(doc))
+    append(elem) {
+        if (!Element.isElement(elem))
             throw new Error(
                 `Append expected to receive doc of type <Element> instead got type <${typeof doc}>`
             );
 
-        if (this._dom.elements && Array.isArray(this._dom.elements))
-            this._dom.elements.push(doc.dom);
-        else this._dom.elements = [doc.dom];
+        if (this.dom.elements && Array.isArray(this.dom.elements))
+            this.dom.elements.push(elem.dom);
+        else this.dom.elements = [elem.dom];
 
         return this;
     }

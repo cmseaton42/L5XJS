@@ -1,0 +1,411 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Program Class Methods _orderify: Results in the Correct Order 1`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [],
+        "name": "Description",
+        "type": "element",
+      },
+      Object {
+        "elements": Array [],
+        "name": "Tags",
+        "type": "element",
+      },
+      Object {
+        "elements": Array [],
+        "name": "Routines",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods addTag: Adds Tag Program Instance 1`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "BOOL",
+              "Name": "tag1",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+        ],
+        "name": "Tags",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods addTag: Adds Tag Program Instance 2`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "BOOL",
+              "Name": "tag1",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "DINT",
+              "Name": "tag2",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+        ],
+        "name": "Tags",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods addTag: Adds Tag Program Instance 3`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "cdata": "A Cool Program Description",
+            "type": "cdata",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "BOOL",
+              "Name": "tag1",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "DINT",
+              "Name": "tag2",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "SINT",
+              "Name": "tag3",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+        ],
+        "name": "Tags",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods addTag: Adds Tag Program Instance 4`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "cdata": "A Cool Program Description",
+            "type": "cdata",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "BOOL",
+              "Name": "tag1",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "DINT",
+              "Name": "tag2",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "SINT",
+              "Name": "tag3",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "REAL",
+              "Name": "tag4",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+        ],
+        "name": "Tags",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods addTag: Adds Tag Program Instance 5`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "cdata": "A Cool Program Description",
+            "type": "cdata",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "BOOL",
+              "Name": "tag1",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "DINT",
+              "Name": "tag2",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "SINT",
+              "Name": "tag3",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "REAL",
+              "Name": "not_tag4Anymore",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+        ],
+        "name": "Tags",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class New Instance Initializes with Desired Document Model 1`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "ProgramName",
+      "Type": "Normal",
+    },
+    "elements": Array [],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class New Instance Initializes with Desired Document Model 2`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "ProgramName",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "cdata": "A Description",
+            "type": "cdata",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class New Instance Initializes with Desired Document Model 3`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Safety",
+      "Name": "ProgramName",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "cdata": "A Description",
+            "type": "cdata",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
