@@ -42,8 +42,8 @@ How the heck does this thing work anyway? Great question!
 
 * **Canaan Seaton** - *Owner* - [GitHub Profile](https://github.com/cmseaton42) - [Personal Website](http://www.canaanseaton.com/)
 
-Wanna *become* a contributor? [Here's](https://github.com/cmseaton42/node-ethernet-ip/blob/master/CONTRIBUTING.md) how!
+Wanna *become* a contributor? [Here's](https://github.com/cmseaton42/L5XJS/blob/master/CONTRIBUTING.md) how!
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENCE](https://github.com/cmseaton42/node-ethernet-ip/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENCE](https://github.com/cmseaton42/L5XJS/blob/master/LICENSE) file for details
