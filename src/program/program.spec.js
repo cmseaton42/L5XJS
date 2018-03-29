@@ -173,7 +173,7 @@ describe("Program Class", () => {
             expect(prog.findRoutine("cRoutine")).toMatchSnapshot();
             expect(prog).toMatchSnapshot();
 
-            const found = prog.findRoutine("aRoutine").addRung(new Rung("XIC(anotherTag)NOP();"));
+            prog.findRoutine("aRoutine").addRung(new Rung("XIC(anotherTag)NOP();"));
             expect(prog).toMatchSnapshot();
         });
     });

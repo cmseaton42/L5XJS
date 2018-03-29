@@ -165,7 +165,8 @@ class Program extends Element {
         const order = {
             Description: 1,
             Tags: 2,
-            Routines: 3
+            Routines: 3,
+            ChildPrograms: 4
         };
 
         this.dom.elements.sort((a, b) => {

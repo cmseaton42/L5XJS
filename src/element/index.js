@@ -15,7 +15,7 @@ class Element {
         // Initialize Base L5X Dom Object
         // --> This Object is in the form that the
         // --> package 'xml-js' will understand
-        // No filepathor tree given, initialize new document
+        // No filepath or tree given, initialize new document
         this._dom = document_tree;
     }
 
