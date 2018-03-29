@@ -1,4 +1,7 @@
 const Document = require("./index");
+const Tag = require("../tag");
+const Program = require("../program");
+const Routine = require("../routine");
 const fs = require("fs");
 const path = require("path");
 
@@ -41,6 +44,64 @@ describe("Document Class", () => {
             docEmpty = new Document();
         });
 
+        test("addTag: Throws on Invalid Input", () => {
+            const fn = tag => () => docFull.addTag(tag);
+
+            expect(fn(new Program("notATag"))).toThrow();
+            expect(fn("notATag")).toThrow();
+        });
+
+        test("addTag: Adds Tag to Document Instance", () => {
+            docFull.addTag(new Tag("tag1", "BOOL"));
+            docEmpty.addTag(new Tag("tag1", "BOOL"));
+            expect(docFull).toMatchSnapshot();
+            expect(docEmpty).toMatchSnapshot();
+
+            docFull.addTag(new Tag("tag2", "DINT"));
+            docEmpty.addTag(new Tag("tag2", "DINT"));
+            expect(docFull).toMatchSnapshot();
+            expect(docEmpty).toMatchSnapshot();
+
+            docEmpty.addTag(new Tag("tag3", "SINT"));
+            expect(docEmpty).toMatchSnapshot();
+
+            const tag4 = new Tag("tag4", "REAL");
+            docEmpty.addTag(tag4);
+            expect(docEmpty).toMatchSnapshot();
+
+            tag4.dom.attributes.Name = "not_tag4Anymore";
+            expect(docEmpty).toMatchSnapshot();
+        });
+
+
+        test("addProgam: Throws on Invalid Input", () => {
+            const fn = prog => () => docFull.addProgram(prog);
+
+            expect(fn(new Program("notATag"))).not.toThrow();
+            expect(fn(new Tag("ATag", "DINT"))).toThrow();
+            expect(fn("notATag")).toThrow();
+        });
+
+        test("addProgram: Adds Program to Document Instance", () => {
+            docFull.addProgram(new Program("aProgram"));
+            docFull.addProgram(new Program("bProgram"));
+            docFull.addProgram(new Program("cProgram"));
+
+            docEmpty.addProgram(new Program("aProgram"));
+            docEmpty.addProgram(new Program("bProgram"));
+            docEmpty.addProgram(new Program("cProgram"));
+
+            expect(docFull).toMatchSnapshot();
+            expect(docEmpty).toMatchSnapshot();
+
+            const prog = new Program("dProgram");
+            docEmpty.addProgram(prog);
+            expect(docEmpty).toMatchSnapshot();
+
+            prog.addRoutine(new Routine("aRoutine"));
+            expect(docEmpty).toMatchSnapshot();
+        });
+
         test("export: Exported Data is Correct", () => {
             docFull.export(path.resolve(__dirname, "./__test-data__/generated_datatype.L5X"));
 
@@ -63,7 +124,9 @@ describe("Document Class", () => {
         });
 
         test("_orderify: Results in the Correct Order", () => {
-            docEmpty.findOne("Controller").dom.elements.push({ type: "element", name: "Tags", elements: [] });
+            docEmpty
+                .findOne("Controller")
+                .dom.elements.push({ type: "element", name: "Tags", elements: [] });
 
             docEmpty.findOne("Controller").dom.elements.push({
                 type: "element",

@@ -1,5 +1,7 @@
 const fs = require("fs");
 const Element = require("../element");
+const Tag = require("../tag");
+const Program = require("../program");
 const { resolve } = require("path");
 const { hash } = require("../utilities");
 const { xml2js } = require("xml-js");
@@ -42,6 +44,64 @@ class Document extends Element {
         }
 
         this.class_id = DOCUMENT_ID;
+    }
+
+    /**
+     * Adds tag to controller instance
+     *
+     * @param {Tag} tag
+     * @memberof Program
+     */
+    addTag(tag) {
+        if (!Tag.isTag(tag))
+            throw new Error(`addTag expected tag of type <Tag> instead got <${typeof tag}>`);
+
+        const controller = this.findOne("Controller");
+        const tags = controller.findOne("Tags", null, ["Programs"]);
+
+        /* eslint-disable indent */
+        if (tags) tags.append(tag);
+        else
+            controller.append(
+                new Element({
+                    type: "element",
+                    name: "Tags",
+                    elements: []
+                }).append(tag)
+            );
+        /* eslint-enable indent */
+
+        this._orderify();
+    }
+
+    /**
+     * Adds program to controller instance
+     *
+     * @param {Program} prog
+     * @memberof Program
+     */
+    addProgram(prog) {
+        if (!Program.isProgram(prog))
+            throw new Error(
+                `addProgram expected prog of type <Program> instead got <${typeof prog}>`
+            );
+
+        const controller = this.findOne("Controller");
+        const programs = controller.findOne("Programs");
+
+        /* eslint-disable indent */
+        if (programs) programs.append(prog);
+        else
+            controller.append(
+                new Element({
+                    type: "element",
+                    name: "Programs",
+                    elements: []
+                }).append(prog)
+            );
+        /* eslint-enable indent */
+
+        this._orderify();
     }
 
     /**
