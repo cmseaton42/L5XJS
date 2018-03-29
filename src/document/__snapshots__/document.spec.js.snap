@@ -1557,6 +1557,295 @@ Document {
 }
 `;
 
+exports[`Document Class Methods findProgram: Finds Target Program 1`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "aProgram",
+      "Type": "Normal",
+    },
+    "elements": Array [],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findProgram: Finds Target Program 2`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "bProgram",
+      "Type": "Normal",
+    },
+    "elements": Array [],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findProgram: Finds Target Program 3`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "cProgram",
+      "Type": "Normal",
+    },
+    "elements": Array [],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findProgram: Finds Target Program 4`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "aProgram",
+                      "Type": "Normal",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "bProgram",
+                      "Type": "Normal",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "eProgram",
+                      "Type": "Normal",
+                    },
+                    "elements": Array [],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "0bd80ec94271dabcd82c885784e63409",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findProgram: Finds Target Program 5`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "eProgram",
+      "Type": "Normal",
+    },
+    "elements": Array [],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findTag: Finds Target Tag 1`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "DataType": "DINT",
+      "Name": "aTag",
+      "TagType": "Base",
+    },
+    "elements": Array [],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findTag: Finds Target Tag 2`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "DataType": "SINT",
+      "Name": "bTag",
+      "TagType": "Base",
+    },
+    "elements": Array [],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findTag: Finds Target Tag 3`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "DataType": "BOOL",
+      "Name": "cTag",
+      "TagType": "Base",
+    },
+    "elements": Array [],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findTag: Finds Target Tag 4`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "DataType": "DINT",
+                      "Name": "aTag",
+                      "TagType": "Base",
+                    },
+                    "elements": Array [],
+                    "name": "Tag",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "DataType": "SINT",
+                      "Name": "bTag",
+                      "TagType": "Base",
+                    },
+                    "elements": Array [],
+                    "name": "Tag",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "DataType": "BOOL",
+                      "Name": "eTag",
+                      "TagType": "Base",
+                    },
+                    "elements": Array [],
+                    "name": "Tag",
+                    "type": "element",
+                  },
+                ],
+                "name": "Tags",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "0bd80ec94271dabcd82c885784e63409",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods findTag: Finds Target Tag 5`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "DataType": "BOOL",
+      "Name": "eTag",
+      "TagType": "Base",
+    },
+    "elements": Array [],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
 exports[`Document Class New Instance Initializes with Desired Document Model 1`] = `
 Object {
   "declaration": Object {

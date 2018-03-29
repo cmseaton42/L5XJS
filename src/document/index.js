@@ -105,6 +105,48 @@ class Document extends Element {
     }
 
     /**
+     * Finds tag in the controller instance that matches the name
+     *
+     * @param {string} name
+     * @returns {Tag|null}
+     * @memberof Program
+     */
+    findTag(name) {
+        if (typeof name !== "string")
+            throw new Error(`findTag expected name of type <String> instead got <${typeof name}>`);
+
+        const found = this.findOne("Tag", { Name: name }, ["Programs"]);
+        if (!found) return null;
+
+        const tag = new Tag(name, found.dom.attributes.DataType);
+        tag._dom = found.dom;
+
+        return tag;
+    }
+
+    /**
+     * Finds program in the controller instance that matches the name
+     *
+     * @param {string} name
+     * @returns {Program|null}
+     * @memberof Program
+     */
+    findProgram(name) {
+        if (typeof name !== "string")
+            throw new Error(
+                `findProgram expected name of type <String> instead got <${typeof name}>`
+            );
+
+        const found = this.findOne("Program", { Name: name });
+        if (!found) return null;
+
+        const prog = new Program(name);
+        prog._dom = found.dom;
+
+        return prog;
+    }
+
+    /**
      * Puts the programs children in the correct order
      *
      * @private

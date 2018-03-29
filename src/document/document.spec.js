@@ -102,6 +102,62 @@ describe("Document Class", () => {
             expect(docEmpty).toMatchSnapshot();
         });
 
+        test("findTag: Throws on Invalid Input", () => {
+            const fn = name => () => docEmpty.findTag(name);
+
+            expect(fn(new Program("notATag"))).toThrow();
+            expect(fn(12)).toThrow();
+            expect(fn("aTag")).not.toThrow();
+        });
+
+        test("findTag: Finds Target Tag", () => {
+            docEmpty.addTag(new Tag("aTag", "DINT"));
+            docEmpty.addTag(new Tag("bTag", "SINT"));
+
+            const tag = new Tag("cTag", "BOOL");
+            docEmpty.addTag(tag);
+
+            expect(docEmpty.findTag("aTag")).not.toBeNull();
+            expect(docEmpty.findTag("aTag")).toMatchSnapshot();
+            expect(docEmpty.findTag("bTag")).not.toBeNull();
+            expect(docEmpty.findTag("bTag")).toMatchSnapshot();
+            expect(docEmpty.findTag("cTag")).not.toBeNull();
+            expect(docEmpty.findTag("cTag")).toMatchSnapshot();
+            expect(docEmpty.findTag("dTag")).toBeNull();
+
+            docEmpty.findTag("cTag").dom.attributes.Name = "eTag";
+            expect(docEmpty).toMatchSnapshot();
+            expect(tag).toMatchSnapshot();
+        });
+
+        test("findProgram: Throws on Invalid Input", () => {
+            const fn = name => () => docEmpty.findProgram(name);
+
+            expect(fn(new Program("notATag"))).toThrow();
+            expect(fn(12)).toThrow();
+            expect(fn("aProgram")).not.toThrow();
+        });
+
+        test("findProgram: Finds Target Program", () => {
+            docEmpty.addProgram(new Program("aProgram"));
+            docEmpty.addProgram(new Program("bProgram"));
+
+            const prog = new Program("cProgram");
+            docEmpty.addProgram(prog);
+
+            expect(docEmpty.findProgram("aProgram")).not.toBeNull();
+            expect(docEmpty.findProgram("aProgram")).toMatchSnapshot();
+            expect(docEmpty.findProgram("bProgram")).not.toBeNull();
+            expect(docEmpty.findProgram("bProgram")).toMatchSnapshot();
+            expect(docEmpty.findProgram("cProgram")).not.toBeNull();
+            expect(docEmpty.findProgram("cProgram")).toMatchSnapshot();
+            expect(docEmpty.findProgram("dProgram")).toBeNull();
+
+            docEmpty.findProgram("cProgram").dom.attributes.Name = "eProgram";
+            expect(docEmpty).toMatchSnapshot();
+            expect(prog).toMatchSnapshot();
+        });
+
         test("export: Exported Data is Correct", () => {
             docFull.export(path.resolve(__dirname, "./__test-data__/generated_datatype.L5X"));
 
