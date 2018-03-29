@@ -1,5 +1,154 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Routine Class Methods addRung: Produces Desired Doc Model 1`] = `
+Routine {
+  "_dom": Object {
+    "attributes": Object {
+      "Name": "IamRoutine",
+      "Type": "RLL",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Number": 0,
+              "Type": "N",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "cdata": "XIC(someTag)NOP();",
+                    "type": "cdata",
+                  },
+                ],
+                "name": "Text",
+                "type": "element",
+              },
+            ],
+            "name": "Rung",
+            "type": "element",
+          },
+        ],
+        "name": "RLLContent",
+        "type": "element",
+      },
+    ],
+    "name": "Routine",
+    "type": "element",
+  },
+  "class_id": "262fbaac4bd096afccf0fbf1fc161c89",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Routine Class Methods addRung: Produces Desired Doc Model 2`] = `
+Routine {
+  "_dom": Object {
+    "attributes": Object {
+      "Name": "IamRoutine",
+      "Type": "RLL",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Number": 1,
+              "Type": "N",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "cdata": "XIC(someTag)NOP();",
+                    "type": "cdata",
+                  },
+                ],
+                "name": "Text",
+                "type": "element",
+              },
+            ],
+            "name": "Rung",
+            "type": "element",
+          },
+        ],
+        "name": "RLLContent",
+        "type": "element",
+      },
+    ],
+    "name": "Routine",
+    "type": "element",
+  },
+  "class_id": "262fbaac4bd096afccf0fbf1fc161c89",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Routine Class Methods addRung: Produces Desired Doc Model 3`] = `
+Routine {
+  "_dom": Object {
+    "attributes": Object {
+      "Name": "IamRoutine",
+      "Type": "RLL",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Number": 0,
+              "Type": "N",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "cdata": "XIC(someTag)NOP();",
+                    "type": "cdata",
+                  },
+                ],
+                "name": "Text",
+                "type": "element",
+              },
+            ],
+            "name": "Rung",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Number": 1,
+              "Type": "N",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "cdata": "XIC(anotherTag)NOP();",
+                    "type": "cdata",
+                  },
+                ],
+                "name": "Text",
+                "type": "element",
+              },
+            ],
+            "name": "Rung",
+            "type": "element",
+          },
+        ],
+        "name": "RLLContent",
+        "type": "element",
+      },
+    ],
+    "name": "Routine",
+    "type": "element",
+  },
+  "class_id": "262fbaac4bd096afccf0fbf1fc161c89",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
 exports[`Routine Class New Instance Initializes with Desired Document Model 1`] = `
 Routine {
   "_dom": Object {

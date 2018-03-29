@@ -4,7 +4,7 @@ const { hash } = require("../utilities");
 const RUNG_ID = hash("RUNG_ID_STRING");
 
 class Rung extends Element {
-    constructor(logic, num, comment = null) {
+    constructor(logic, num = 0, comment = null) {
         if (typeof logic !== "string")
             throw new Error(
                 `Rung constructor expected logic of type <String> instead got <${typeof logic}>`

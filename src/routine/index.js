@@ -1,4 +1,5 @@
 const Element = require("../element");
+const Rung = require("../rung");
 const { hash } = require("../utilities");
 
 const ROUTINE_ID = hash("ROUTINE_ID_STRING");
@@ -22,7 +23,6 @@ class Routine extends Element {
 
         let elements = [];
 
-        
         /* eslint-disable indent */
         if (description)
             elements.push({
@@ -52,6 +52,24 @@ class Routine extends Element {
         });
 
         this.class_id = ROUTINE_ID;
+    }
+
+    /**
+     * Adds a rung to the ladder content
+     *
+     * @param {Rung} rung
+     * @memberof Routine
+     */
+    addRung(rung) {
+        if (!Rung.isRung(rung))
+            throw new Error(`addRung expected rung of type <Rung> instead got <${typeof rung}>`);
+
+        const rllContent = this.findOne("RLLContent");
+        const rungNum = rllContent.dom.elements.length;
+
+        rung.dom.attributes.Number = rungNum;
+
+        rllContent.append(rung);
     }
 
     /**

@@ -1,4 +1,6 @@
 const Routine = require("./index");
+const Element = require("../element");
+const Rung = require("../rung");
 
 describe("Routine Class", () => {
     describe("New Instance", () => {
@@ -18,6 +20,34 @@ describe("Routine Class", () => {
 
             routine = new Routine("ARoutine", "I am a description");
             expect(routine).toMatchSnapshot();
+        });
+    });
+
+    describe("Methods", () => {
+        let rout;
+
+        beforeEach(() => {
+            rout = new Routine("IamRoutine");
+        });
+
+        test("addRung: Throws on Invalid Input", () => {
+            const fn = rung => () => rout.addRung(rung);
+
+            expect(fn(new Rung("XIC(someTag)NOP();"))).not.toThrow();
+            expect(fn(new Element({ type: "element", name: "el" }))).toThrow();
+        });
+
+        test("addRung: Produces Desired Doc Model", () => {
+            const r1 = new Rung("XIC(someTag)NOP();");
+            rout.addRung(r1);
+            expect(rout).toMatchSnapshot();
+
+            r1.dom.attributes.Number = 1;
+            expect(rout).toMatchSnapshot();
+
+            r1.dom.attributes.Number = 0;
+            rout.addRung(new Rung("XIC(anotherTag)NOP();"));
+            expect(rout).toMatchSnapshot();
         });
     });
 

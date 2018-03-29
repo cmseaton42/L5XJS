@@ -1,5 +1,7 @@
 const Program = require("./index");
 const Tag = require("../tag");
+const Routine = require("../routine");
+const Rung = require("../rung");
 
 describe("Program Class", () => {
     describe("New Instance", () => {
@@ -90,6 +92,88 @@ describe("Program Class", () => {
             expect(prog).toMatchSnapshot();
 
             tag4.dom.attributes.Name = "not_tag4Anymore";
+            expect(prog).toMatchSnapshot();
+        });
+
+        test("addRoutine: Throws on Invalid Input", () => {
+            const fn = rout => () => prog.addRoutine(rout);
+
+            expect(fn(new Program("notATag"))).toThrow();
+            expect(fn("notATag")).toThrow();
+        });
+
+        test("addRoutine: Adds Routine Program Instance", () => {
+            prog.addRoutine(new Routine("aRoutine"));
+            expect(prog).toMatchSnapshot();
+
+            prog.addRoutine(new Routine("bRoutine"));
+            expect(prog).toMatchSnapshot();
+
+            const rout = new Routine("cRoutine");
+            prog.addRoutine(rout);
+            expect(prog).toMatchSnapshot();
+
+            rout.addRung(new Rung("XIC(someTag)NOP();"));
+            expect(prog).toMatchSnapshot();
+        });
+
+        test("findTag: Throws on Invalid Input", () => {
+            const fn = name => () => prog.findTag(name);
+
+            expect(fn(new Program("notATag"))).toThrow();
+            expect(fn(12)).toThrow();
+            expect(fn("aTag")).not.toThrow();
+        });
+
+        test("findTag: Finds Target Tag", () => {
+            prog.addTag(new Tag("aTag", "DINT"));
+            prog.addTag(new Tag("bTag", "SINT"));
+
+            const tag = new Tag("cTag", "BOOL");
+            prog.addTag(tag);
+
+            expect(prog.findTag("aTag")).not.toBeNull();
+            expect(prog.findTag("aTag")).toMatchSnapshot();
+            expect(prog.findTag("bTag")).not.toBeNull();
+            expect(prog.findTag("bTag")).toMatchSnapshot();
+            expect(prog.findTag("cTag")).not.toBeNull();
+            expect(prog.findTag("cTag")).toMatchSnapshot();
+            expect(prog.findTag("dTag")).toBeNull();
+
+            prog.findTag("cTag").dom.attributes.Name = "eTag";
+            expect(prog).toMatchSnapshot();
+            expect(tag).toMatchSnapshot();
+        });
+
+        test("findRoutine: Throws on Invalid Input", () => {
+            const fn = name => () => prog.findRoutine(name);
+
+            expect(fn(new Program("notATag"))).toThrow();
+            expect(fn(12)).toThrow();
+            expect(fn("aRoutine")).not.toThrow();
+        });
+
+        test("findRoutine: Finds Target Routine", () => {
+            prog.addRoutine(new Routine("aRoutine"));
+            prog.addRoutine(new Routine("bRoutine"));
+
+            const rout = new Routine("cRoutine");
+            prog.addRoutine(rout);
+
+            expect(prog.findRoutine("aRoutine")).not.toBeNull();
+            expect(prog.findRoutine("aRoutine")).toMatchSnapshot();
+            expect(prog.findRoutine("bRoutine")).not.toBeNull();
+            expect(prog.findRoutine("bRoutine")).toMatchSnapshot();
+            expect(prog.findRoutine("cRoutine")).not.toBeNull();
+            expect(prog.findRoutine("cRoutine")).toMatchSnapshot();
+            expect(prog.findRoutine("dRoutine")).toBeNull();
+
+            rout.addRung(new Rung("XIC(someTag)NOP();"));
+            expect(prog.findRoutine("cRoutine")).not.toBeNull();
+            expect(prog.findRoutine("cRoutine")).toMatchSnapshot();
+            expect(prog).toMatchSnapshot();
+
+            const found = prog.findRoutine("aRoutine").addRung(new Rung("XIC(anotherTag)NOP();"));
             expect(prog).toMatchSnapshot();
         });
     });

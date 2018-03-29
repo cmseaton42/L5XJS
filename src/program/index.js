@@ -1,5 +1,6 @@
 const Element = require("../element");
 const Tag = require("../tag");
+const Routine = require("../routine");
 const { hash } = require("../utilities");
 
 const PROGRAM_ID = hash("PROGRAM_ID_STRING");
@@ -62,7 +63,7 @@ class Program extends Element {
      */
     addTag(tag) {
         if (!Tag.isTag(tag))
-            throw new Error(`addTag expected tag of type <Tag> instead got type <${typeof tag}>`);
+            throw new Error(`addTag expected tag of type <Tag> instead got <${typeof tag}>`);
 
         const tags = this.findOne("Tags");
 
@@ -79,6 +80,79 @@ class Program extends Element {
         /* eslint-enable indent */
 
         this._orderify();
+    }
+
+    /**
+     * Adds routine to program instance
+     *
+     * @param {any} routine
+     * @memberof Program
+     */
+    addRoutine(routine) {
+        if (!Routine.isRoutine(routine))
+            throw new Error(
+                `addRoutine expected routine of type <Routine> instead got <${typeof routine}>`
+            );
+
+        const routines = this.findOne("Routines");
+
+        /* eslint-disable indent */
+        if (routines) routines.append(routine);
+        else
+            this.append(
+                new Element({
+                    type: "element",
+                    name: "Routines",
+                    elements: []
+                }).append(routine)
+            );
+        /* eslint-enable indent */
+
+        this._orderify();
+    }
+
+    /**
+     * Finds tag in the program instance that matches the name
+     *
+     * @param {string} name
+     * @returns {Tag|null}
+     * @memberof Program
+     */
+    findTag(name) {
+        if (typeof name !== "string")
+            throw new Error(
+                `findTag expected name of type <String> instead got <${typeof name}>`
+            );
+
+        const found = this.findOne("Tag", { Name: name });
+        if (!found) return null;
+
+        const tag = new Tag(name, found.dom.attributes.DataType);
+        tag._dom = found.dom;
+
+        return tag;
+    }
+
+    /**
+     * Finds routine in the program instance that matches the name
+     *
+     * @param {string} name
+     * @returns {Routine|null}
+     * @memberof Program
+     */
+    findRoutine(name) {
+        if (typeof name !== "string")
+            throw new Error(
+                `findRoutine expected name of type <String> instead got <${typeof name}>`
+            );
+
+        const found = this.findOne("Routine", { Name: name });
+        if (!found) return null;
+
+        const routine = new Routine(name);
+        routine._dom = found.dom;
+
+        return routine;
     }
 
     /**

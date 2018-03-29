@@ -33,6 +33,258 @@ Program {
 }
 `;
 
+exports[`Program Class Methods addRoutine: Adds Routine Program Instance 1`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Name": "aRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+        ],
+        "name": "Routines",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods addRoutine: Adds Routine Program Instance 2`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Name": "aRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "bRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+        ],
+        "name": "Routines",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods addRoutine: Adds Routine Program Instance 3`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Name": "aRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "bRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "cRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+        ],
+        "name": "Routines",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods addRoutine: Adds Routine Program Instance 4`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Name": "aRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "bRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "cRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Number": 0,
+                      "Type": "N",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "cdata": "XIC(someTag)NOP();",
+                            "type": "cdata",
+                          },
+                        ],
+                        "name": "Text",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Rung",
+                    "type": "element",
+                  },
+                ],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+        ],
+        "name": "Routines",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
 exports[`Program Class Methods addTag: Adds Tag Program Instance 1`] = `
 Program {
   "_dom": Object {
@@ -333,6 +585,445 @@ Program {
     "type": "element",
   },
   "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findRoutine: Finds Target Routine 1`] = `
+Routine {
+  "_dom": Object {
+    "attributes": Object {
+      "Name": "aRoutine",
+      "Type": "RLL",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [],
+        "name": "RLLContent",
+        "type": "element",
+      },
+    ],
+    "name": "Routine",
+    "type": "element",
+  },
+  "class_id": "262fbaac4bd096afccf0fbf1fc161c89",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findRoutine: Finds Target Routine 2`] = `
+Routine {
+  "_dom": Object {
+    "attributes": Object {
+      "Name": "bRoutine",
+      "Type": "RLL",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [],
+        "name": "RLLContent",
+        "type": "element",
+      },
+    ],
+    "name": "Routine",
+    "type": "element",
+  },
+  "class_id": "262fbaac4bd096afccf0fbf1fc161c89",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findRoutine: Finds Target Routine 3`] = `
+Routine {
+  "_dom": Object {
+    "attributes": Object {
+      "Name": "cRoutine",
+      "Type": "RLL",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [],
+        "name": "RLLContent",
+        "type": "element",
+      },
+    ],
+    "name": "Routine",
+    "type": "element",
+  },
+  "class_id": "262fbaac4bd096afccf0fbf1fc161c89",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findRoutine: Finds Target Routine 4`] = `
+Routine {
+  "_dom": Object {
+    "attributes": Object {
+      "Name": "cRoutine",
+      "Type": "RLL",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Number": 0,
+              "Type": "N",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "cdata": "XIC(someTag)NOP();",
+                    "type": "cdata",
+                  },
+                ],
+                "name": "Text",
+                "type": "element",
+              },
+            ],
+            "name": "Rung",
+            "type": "element",
+          },
+        ],
+        "name": "RLLContent",
+        "type": "element",
+      },
+    ],
+    "name": "Routine",
+    "type": "element",
+  },
+  "class_id": "262fbaac4bd096afccf0fbf1fc161c89",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findRoutine: Finds Target Routine 5`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Name": "aRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "bRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "cRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Number": 0,
+                      "Type": "N",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "cdata": "XIC(someTag)NOP();",
+                            "type": "cdata",
+                          },
+                        ],
+                        "name": "Text",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Rung",
+                    "type": "element",
+                  },
+                ],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+        ],
+        "name": "Routines",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findRoutine: Finds Target Routine 6`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Name": "aRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Number": 0,
+                      "Type": "N",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "cdata": "XIC(anotherTag)NOP();",
+                            "type": "cdata",
+                          },
+                        ],
+                        "name": "Text",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Rung",
+                    "type": "element",
+                  },
+                ],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "bRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Name": "cRoutine",
+              "Type": "RLL",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Number": 0,
+                      "Type": "N",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "cdata": "XIC(someTag)NOP();",
+                            "type": "cdata",
+                          },
+                        ],
+                        "name": "Text",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Rung",
+                    "type": "element",
+                  },
+                ],
+                "name": "RLLContent",
+                "type": "element",
+              },
+            ],
+            "name": "Routine",
+            "type": "element",
+          },
+        ],
+        "name": "Routines",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findTag: Finds Target Tag 1`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "DataType": "DINT",
+      "Name": "aTag",
+      "TagType": "Base",
+    },
+    "elements": Array [],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findTag: Finds Target Tag 2`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "DataType": "SINT",
+      "Name": "bTag",
+      "TagType": "Base",
+    },
+    "elements": Array [],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findTag: Finds Target Tag 3`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "DataType": "BOOL",
+      "Name": "cTag",
+      "TagType": "Base",
+    },
+    "elements": Array [],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findTag: Finds Target Tag 4`] = `
+Program {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "Name": "testProg",
+      "Type": "Normal",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "DINT",
+              "Name": "aTag",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "SINT",
+              "Name": "bTag",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+          Object {
+            "attributes": Object {
+              "Class": "Standard",
+              "DataType": "BOOL",
+              "Name": "eTag",
+              "TagType": "Base",
+            },
+            "elements": Array [],
+            "name": "Tag",
+            "type": "element",
+          },
+        ],
+        "name": "Tags",
+        "type": "element",
+      },
+    ],
+    "name": "Program",
+    "type": "element",
+  },
+  "class_id": "bacac87817ce803505fcdfaf4360dc50",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Program Class Methods findTag: Finds Target Tag 5`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "Class": "Standard",
+      "DataType": "BOOL",
+      "Name": "eTag",
+      "TagType": "Base",
+    },
+    "elements": Array [],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
   "elem_id": "33cb4159377b63ce9db11667160e39df",
 }
 `;
