@@ -70,6 +70,7 @@ class Routine extends Element {
         rung.dom.attributes.Number = rungNum;
 
         rllContent.append(rung);
+        return this;
     }
 
     /**

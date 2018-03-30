@@ -72,6 +72,7 @@ class Document extends Element {
         /* eslint-enable indent */
 
         this._orderify();
+        return this;
     }
 
     /**
@@ -102,6 +103,7 @@ class Document extends Element {
         /* eslint-enable indent */
 
         this._orderify();
+        return this;
     }
 
     /**

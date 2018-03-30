@@ -80,6 +80,7 @@ class Program extends Element {
         /* eslint-enable indent */
 
         this._orderify();
+        return this;
     }
 
     /**
@@ -109,6 +110,7 @@ class Program extends Element {
         /* eslint-enable indent */
 
         this._orderify();
+        return this;
     }
 
     /**
