@@ -1846,6 +1846,452 @@ Tag {
 }
 `;
 
+exports[`Document Class Methods setTarget: Sets Target Successfully 1`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "TargetName": "aProgram",
+              "TargetType": "Program",
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "aProgram",
+                      "Type": "Normal",
+                      "Use": "Target",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "aRoutine",
+                              "Type": "RLL",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "bProgram",
+                      "Type": "Normal",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "bRoutine",
+                              "Type": "RLL",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "0bd80ec94271dabcd82c885784e63409",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods setTarget: Sets Target Successfully 2`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "TargetName": "bProgram",
+              "TargetType": "Program",
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "aProgram",
+                      "Type": "Normal",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "aRoutine",
+                              "Type": "RLL",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "bProgram",
+                      "Type": "Normal",
+                      "Use": "Target",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "bRoutine",
+                              "Type": "RLL",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "0bd80ec94271dabcd82c885784e63409",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods setTarget: Sets Target Successfully 3`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "TargetName": "aRoutine",
+              "TargetType": "Routine",
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "aProgram",
+                      "Type": "Normal",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "aRoutine",
+                              "Type": "RLL",
+                              "Use": "Target",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "bProgram",
+                      "Type": "Normal",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "bRoutine",
+                              "Type": "RLL",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "0bd80ec94271dabcd82c885784e63409",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
+exports[`Document Class Methods setTarget: Sets Target Successfully 4`] = `
+Document {
+  "_dom": Object {
+    "declaration": Object {
+      "attributes": Object {
+        "encoding": "UTF-8",
+        "standalone": "yes",
+        "version": "1.0",
+      },
+    },
+    "elements": Array [
+      Object {
+        "attributes": Object {
+          "ContainsContext": true,
+          "SchemaRevision": "1.0",
+        },
+        "elements": Array [
+          Object {
+            "attributes": Object {
+              "TargetName": "bRoutine",
+              "TargetType": "Routine",
+              "Use": "context",
+            },
+            "elements": Array [
+              Object {
+                "elements": Array [
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "aProgram",
+                      "Type": "Normal",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "aRoutine",
+                              "Type": "RLL",
+                              "Use": "Context",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                  Object {
+                    "attributes": Object {
+                      "Class": "Standard",
+                      "Name": "bProgram",
+                      "Type": "Normal",
+                      "Use": "Context",
+                    },
+                    "elements": Array [
+                      Object {
+                        "elements": Array [
+                          Object {
+                            "attributes": Object {
+                              "Name": "bRoutine",
+                              "Type": "RLL",
+                              "Use": "Target",
+                            },
+                            "elements": Array [
+                              Object {
+                                "elements": Array [],
+                                "name": "RLLContent",
+                                "type": "element",
+                              },
+                            ],
+                            "name": "Routine",
+                            "type": "element",
+                          },
+                        ],
+                        "name": "Routines",
+                        "type": "element",
+                      },
+                    ],
+                    "name": "Program",
+                    "type": "element",
+                  },
+                ],
+                "name": "Programs",
+                "type": "element",
+              },
+            ],
+            "name": "Controller",
+            "type": "element",
+          },
+        ],
+        "name": "RSLogix5000Content",
+        "type": "element",
+      },
+    ],
+  },
+  "class_id": "0bd80ec94271dabcd82c885784e63409",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;
+
 exports[`Document Class New Instance Initializes with Desired Document Model 1`] = `
 Object {
   "declaration": Object {

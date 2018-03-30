@@ -149,6 +149,48 @@ class Document extends Element {
     }
 
     /**
+     * Sets passed element as document target element
+     * --> Only if a valid element subtype
+     *
+     * @param {Element} target
+     * @memberof Document
+     */
+    setTarget(target) {
+        if (!Element.isElement(target))
+            throw new Error(
+                `setTarget expected to receive target of type <Element> instead got <${typeof target}>`
+            );
+
+        const controller = this.findOne("Controller");
+
+        /* eslint-disable indent */
+        switch (target.dom.name) {
+            case "Program":
+                controller.dom.attributes.TargetType = "Program";
+                break;
+            case "Routine":
+                controller.dom.attributes.TargetType = "Routine";
+                break;
+            default:
+                throw new Error(
+                    `setTarget could not set passed element as Target - Unrecognized Element Type <${
+                        target.name
+                    }>`
+                );
+        }
+        /* eslint-enable indent */
+        
+        const prog = this.findOne("Program", { Use: "Target" });
+        if (prog) prog.dom.attributes.Use = "Context";
+
+        const rout = this.findOne("Routine", { Use: "Target" });
+        if (rout) rout.dom.attributes.Use = "Context";
+
+        controller.dom.attributes.TargetName = target.dom.attributes.Name;
+        target.dom.attributes.Use = "Target";
+    }
+
+    /**
      * Puts the programs children in the correct order
      *
      * @private

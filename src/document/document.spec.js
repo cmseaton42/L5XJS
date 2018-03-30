@@ -73,7 +73,6 @@ describe("Document Class", () => {
             expect(docEmpty).toMatchSnapshot();
         });
 
-
         test("addProgam: Throws on Invalid Input", () => {
             const fn = prog => () => docFull.addProgram(prog);
 
@@ -156,6 +155,40 @@ describe("Document Class", () => {
             docEmpty.findProgram("cProgram").dom.attributes.Name = "eProgram";
             expect(docEmpty).toMatchSnapshot();
             expect(prog).toMatchSnapshot();
+        });
+
+        test("setTarget: Throws on Invalid Inputs", () => {
+            const fn = target => () => docEmpty.setTarget(target);
+
+            expect(fn()).toThrow();
+            expect(fn(12)).toThrow();
+            expect(fn(new Program("aProgram"))).not.toThrow();
+            expect(fn(new Tag("aTag", "DINT"))).toThrow();
+        });
+
+        test("setTarget: Sets Target Successfully", () => {
+            const progA = new Program("aProgram");
+            const progB = new Program("bProgram");
+            const routA = new Routine("aRoutine");
+            const routB = new Routine("bRoutine");
+
+            docEmpty.addProgram(progA);
+            progA.addRoutine(routA);
+
+            docEmpty.addProgram(progB);
+            progB.addRoutine(routB);
+
+            docEmpty.setTarget(progA);
+            expect(docEmpty).toMatchSnapshot();
+
+            docEmpty.setTarget(progB);
+            expect(docEmpty).toMatchSnapshot();
+
+            docEmpty.setTarget(routA);
+            expect(docEmpty).toMatchSnapshot();
+
+            docEmpty.setTarget(routB);
+            expect(docEmpty).toMatchSnapshot();
         });
 
         test("export: Exported Data is Correct", () => {
