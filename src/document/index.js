@@ -34,7 +34,7 @@ class Document extends Element {
                             {
                                 type: "element",
                                 name: "Controller",
-                                attributes: { Use: "context" },
+                                attributes: { Use: "Context" },
                                 elements: []
                             }
                         ]
@@ -161,15 +161,13 @@ class Document extends Element {
                 `setTarget expected to receive target of type <Element> instead got <${typeof target}>`
             );
 
-        const controller = this.findOne("Controller");
-
         /* eslint-disable indent */
         switch (target.dom.name) {
             case "Program":
-                controller.dom.attributes.TargetType = "Program";
+                this.dom.elements[0].attributes.TargetType = "Program";
                 break;
             case "Routine":
-                controller.dom.attributes.TargetType = "Routine";
+                this.dom.elements[0].attributes.TargetType = "Routine";
                 break;
             default:
                 throw new Error(
@@ -179,14 +177,14 @@ class Document extends Element {
                 );
         }
         /* eslint-enable indent */
-        
+
         const prog = this.findOne("Program", { Use: "Target" });
         if (prog) prog.dom.attributes.Use = "Context";
 
         const rout = this.findOne("Routine", { Use: "Target" });
         if (rout) rout.dom.attributes.Use = "Context";
 
-        controller.dom.attributes.TargetName = target.dom.attributes.Name;
+        this.dom.elements[0].attributes.TargetName = target.dom.attributes.Name;
         target.dom.attributes.Use = "Target";
     }
 
