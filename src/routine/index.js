@@ -18,6 +18,7 @@ class Routine extends Element {
 
         let attributes = {
             Name: name,
+            Use: "Context",
             Type: "RLL" // Specify Ladder Logic
         };
 

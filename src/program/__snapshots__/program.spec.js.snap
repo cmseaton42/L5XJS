@@ -7,6 +7,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -40,6 +41,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -48,6 +50,7 @@ Program {
             "attributes": Object {
               "Name": "aRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -79,6 +82,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -87,6 +91,7 @@ Program {
             "attributes": Object {
               "Name": "aRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -102,6 +107,7 @@ Program {
             "attributes": Object {
               "Name": "bRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -133,6 +139,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -141,6 +148,7 @@ Program {
             "attributes": Object {
               "Name": "aRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -156,6 +164,7 @@ Program {
             "attributes": Object {
               "Name": "bRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -171,6 +180,7 @@ Program {
             "attributes": Object {
               "Name": "cRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -202,6 +212,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -210,6 +221,7 @@ Program {
             "attributes": Object {
               "Name": "aRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -225,6 +237,7 @@ Program {
             "attributes": Object {
               "Name": "bRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -240,6 +253,7 @@ Program {
             "attributes": Object {
               "Name": "cRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -292,6 +306,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -327,6 +342,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -373,6 +389,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -440,6 +457,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -518,6 +536,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -595,6 +614,7 @@ Routine {
     "attributes": Object {
       "Name": "aRoutine",
       "Type": "RLL",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -617,6 +637,7 @@ Routine {
     "attributes": Object {
       "Name": "bRoutine",
       "Type": "RLL",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -639,6 +660,7 @@ Routine {
     "attributes": Object {
       "Name": "cRoutine",
       "Type": "RLL",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -661,6 +683,7 @@ Routine {
     "attributes": Object {
       "Name": "cRoutine",
       "Type": "RLL",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -705,6 +728,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -713,6 +737,7 @@ Program {
             "attributes": Object {
               "Name": "aRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -728,6 +753,7 @@ Program {
             "attributes": Object {
               "Name": "bRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -743,6 +769,7 @@ Program {
             "attributes": Object {
               "Name": "cRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -795,6 +822,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -803,6 +831,7 @@ Program {
             "attributes": Object {
               "Name": "aRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -839,6 +868,7 @@ Program {
             "attributes": Object {
               "Name": "bRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -854,6 +884,7 @@ Program {
             "attributes": Object {
               "Name": "cRoutine",
               "Type": "RLL",
+              "Use": "Context",
             },
             "elements": Array [
               Object {
@@ -960,6 +991,7 @@ Program {
       "Class": "Standard",
       "Name": "testProg",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -1035,6 +1067,7 @@ Program {
       "Class": "Standard",
       "Name": "ProgramName",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [],
     "name": "Program",
@@ -1052,6 +1085,7 @@ Program {
       "Class": "Standard",
       "Name": "ProgramName",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {
@@ -1080,6 +1114,7 @@ Program {
       "Class": "Safety",
       "Name": "ProgramName",
       "Type": "Normal",
+      "Use": "Context",
     },
     "elements": Array [
       Object {

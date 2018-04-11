@@ -25,7 +25,8 @@ class Program extends Element {
         let attributes = {
             Name: name,
             Type: "Normal",
-            Class: safety ? "Safety" : "Standard"
+            Class: safety ? "Safety" : "Standard",
+            Use: "Context"
         };
 
         let elements = [];
