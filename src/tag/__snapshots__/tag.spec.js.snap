@@ -106,3 +106,34 @@ Tag {
   "elem_id": "33cb4159377b63ce9db11667160e39df",
 }
 `;
+
+exports[`Tag Class New Instance Initializes with Desired Document Model 5`] = `
+Tag {
+  "_dom": Object {
+    "attributes": Object {
+      "AliasFor": "anotherTag",
+      "Class": "Safety",
+      "DataType": "DINT",
+      "Dimensions": "[12]",
+      "Name": "tagName",
+      "TagType": "Alias",
+    },
+    "elements": Array [
+      Object {
+        "elements": Array [
+          Object {
+            "cdata": "A Description",
+            "type": "cdata",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+    ],
+    "name": "Tag",
+    "type": "element",
+  },
+  "class_id": "202108c6004705df7b5fd0add930619f",
+  "elem_id": "33cb4159377b63ce9db11667160e39df",
+}
+`;

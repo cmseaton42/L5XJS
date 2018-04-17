@@ -4,7 +4,14 @@ const { hash } = require("../utilities");
 const TAG_ID = hash("TAG_ID_STRING");
 
 class Tag extends Element {
-    constructor(name, datatype, description = null, alias = null, safety = false) {
+    constructor(
+        name,
+        datatype,
+        description = null,
+        alias = null,
+        safety = false,
+        dimension = null
+    ) {
         if (typeof name !== "string")
             throw new Error(
                 `Tag constructor expected name of type <String> instead got <${typeof name}>`
@@ -30,6 +37,11 @@ class Tag extends Element {
                 `Tag constructor expected safety of type <Boolean> instead got <${typeof safety}>`
             );
 
+        if (dimension && typeof dimension !== "string")
+            throw new Error(
+                `Tag constructor expected dimension of type <String> instead got <${typeof dimension}>`
+            );
+
         let attributes = {
             Name: name,
             DataType: datatype,
@@ -38,6 +50,7 @@ class Tag extends Element {
         };
 
         if (alias) attributes.AliasFor = alias;
+        if (dimension) attributes.Dimensions = dimension;
 
         let elements = [];
 

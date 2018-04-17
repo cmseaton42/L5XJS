@@ -3,8 +3,14 @@ const Tag = require("./index");
 describe("Tag Class", () => {
     describe("New Instance", () => {
         it("Accepts Proper Input", () => {
-            const fn = (name, datatype, desc = null, alias = null, safety = false) => () =>
-                new Tag(name, datatype, desc, alias, safety);
+            const fn = (
+                name,
+                datatype,
+                desc = null,
+                alias = null,
+                safety = false,
+                dim = null
+            ) => () => new Tag(name, datatype, desc, alias, safety, dim);
 
             expect(fn("tagName")).toThrow();
             expect(fn(null, "DINT")).toThrow();
@@ -15,6 +21,10 @@ describe("Tag Class", () => {
             expect(fn("tagName", "DINT", "A Description", "anotherTag")).not.toThrow();
             expect(fn("tagName", "DINT", "A Description", "anotherTag", 12)).toThrow();
             expect(fn("tagName", "DINT", "A Description", "anotherTag", true)).not.toThrow();
+            expect(fn("tagName", "DINT", "A Description", "anotherTag", true, 12)).toThrow();
+            expect(
+                fn("tagName", "DINT", "A Description", "anotherTag", true, "[10]")
+            ).not.toThrow();
         });
 
         it("Initializes with Desired Document Model", () => {
@@ -28,6 +38,9 @@ describe("Tag Class", () => {
             expect(tag).toMatchSnapshot();
 
             tag = new Tag("tagName", "DINT", "A Description", "anotherTag", true);
+            expect(tag).toMatchSnapshot();
+
+            tag = new Tag("tagName", "DINT", "A Description", "anotherTag", true, "[12]");
             expect(tag).toMatchSnapshot();
         });
     });
