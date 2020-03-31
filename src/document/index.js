@@ -11,9 +11,7 @@ const DOCUMENT_ID = hash("DOCUMENT_ID_STRING");
 class Document extends Element {
     constructor(filepath = null) {
         if (filepath && typeof filepath !== "string")
-            throw new Error(
-                `Document expected to receive filepath of type <String> instead got <${typeof filepath}>`
-            );
+            throw new Error(`Document expected to receive filepath of type <String> instead got <${typeof filepath}>`);
 
         // Call parent constructor
         if (filepath) {
@@ -53,8 +51,7 @@ class Document extends Element {
      * @memberof Program
      */
     addTag(tag) {
-        if (!Tag.isTag(tag))
-            throw new Error(`addTag expected tag of type <Tag> instead got <${typeof tag}>`);
+        if (!Tag.isTag(tag)) throw new Error(`addTag expected tag of type <Tag> instead got <${typeof tag}>`);
 
         const controller = this.findOne("Controller");
         const tags = controller.findOne("Tags", null, ["Programs"]);
@@ -83,9 +80,7 @@ class Document extends Element {
      */
     addProgram(prog) {
         if (!Program.isProgram(prog))
-            throw new Error(
-                `addProgram expected prog of type <Program> instead got <${typeof prog}>`
-            );
+            throw new Error(`addProgram expected prog of type <Program> instead got <${typeof prog}>`);
 
         const controller = this.findOne("Controller");
         const programs = controller.findOne("Programs");
@@ -135,9 +130,7 @@ class Document extends Element {
      */
     findProgram(name) {
         if (typeof name !== "string")
-            throw new Error(
-                `findProgram expected name of type <String> instead got <${typeof name}>`
-            );
+            throw new Error(`findProgram expected name of type <String> instead got <${typeof name}>`);
 
         const found = this.findOne("Program", { Name: name });
         if (!found) return null;
@@ -157,26 +150,7 @@ class Document extends Element {
      */
     setTarget(target) {
         if (!Element.isElement(target))
-            throw new Error(
-                `setTarget expected to receive target of type <Element> instead got <${typeof target}>`
-            );
-
-        /* eslint-disable indent */
-        switch (target.dom.name) {
-            case "Program":
-                this.dom.elements[0].attributes.TargetType = "Program";
-                break;
-            case "Routine":
-                this.dom.elements[0].attributes.TargetType = "Routine";
-                break;
-            default:
-                throw new Error(
-                    `setTarget could not set passed element as Target - Unrecognized Element Type <${
-                        target.name
-                    }>`
-                );
-        }
-        /* eslint-enable indent */
+            throw new Error(`setTarget expected to receive target of type <Element> instead got <${typeof target}>`);
 
         const prog = this.findOne("Program", { Use: "Target" });
         if (prog) prog.dom.attributes.Use = "Context";
@@ -186,6 +160,29 @@ class Document extends Element {
 
         this.dom.elements[0].attributes.TargetName = target.dom.attributes.Name;
         target.dom.attributes.Use = "Target";
+
+        let routines = null;
+
+        /* eslint-disable indent */
+        switch (target.dom.name) {
+            case "Program":
+                this.dom.elements[0].attributes.TargetType = "Program";
+                routines = target.find("Routine");
+
+                if (routines) {
+                    for (const routine of routines) delete routine.dom.attributes.Use;
+                }
+
+                break;
+            case "Routine":
+                this.dom.elements[0].attributes.TargetType = "Routine";
+                break;
+            default:
+                throw new Error(
+                    `setTarget could not set passed element as Target - Unrecognized Element Type <${target.name}>`
+                );
+        }
+        /* eslint-enable indent */
     }
 
     /**
