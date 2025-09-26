@@ -32,7 +32,7 @@ npm install l5x-js
 ## Quick Start
 
 ```typescript
-import { Document, Tag } from 'l5x-js';
+import { Document, Tag, Member } from 'l5x-js';
 
 // Create a new L5X document
 const doc = new Document();
@@ -265,6 +265,64 @@ if (Tag.isTag(someObject)) {
 }
 ```
 
+### Member Class
+
+Represents PLC tag members for structured data types.
+
+#### Constructor
+
+```typescript
+new Member(options: MemberOptions)
+```
+
+**MemberOptions Interface:**
+```typescript
+interface MemberOptions {
+  name: string;           // Member name
+  datatype: string;       // PLC data type (BOOL, DINT, REAL, etc.)
+  description?: string;   // Optional description
+  hidden?: boolean;       // Hidden member flag
+  target?: string;        // Target reference for BOOL/BIT types
+  bitNumber?: number;     // Bit number for BOOL/BIT types
+}
+```
+
+**Examples:**
+```typescript
+// Basic member
+const member = new Member({
+  name: 'Status',
+  datatype: 'DINT'
+});
+
+// Boolean member with target
+const boolMember = new Member({
+  name: 'Running',
+  datatype: 'BOOL',
+  target: 'StatusWord',
+  bitNumber: 0
+});
+
+// Member with description
+const member = new Member({
+  name: 'Temperature',
+  datatype: 'REAL',
+  description: 'Current temperature value',
+  hidden: false
+});
+```
+
+#### Static Methods
+
+##### `Member.isMember(obj: unknown): boolean`
+Type guard to check if object is a Member instance.
+
+```typescript
+if (Member.isMember(someObject)) {
+  console.log(someObject.name); // TypeScript knows it's a Member
+}
+```
+
 ### Element Class
 
 Base class for all L5X elements with XML manipulation capabilities.
@@ -372,7 +430,7 @@ try {
    const { Document, Tag } = require('l5x-js');
    
    // v2.x
-   import { Document, Tag } from 'l5x-js';
+   import { Document, Tag, Member } from 'l5x-js';
    ```
 
 3. **TypeScript**: Full type safety - invalid usage caught at compile time

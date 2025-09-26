@@ -38,6 +38,15 @@ export interface RoutineOptions {
   description?: string;
 }
 
+export interface MemberOptions {
+  name: string;
+  datatype: string;
+  description?: string;
+  hidden?: boolean;
+  target?: string;
+  bitNumber?: number;
+}
+
 export interface FindOptions {
   type: string;
   attributes?: Record<string, string | number | boolean>;

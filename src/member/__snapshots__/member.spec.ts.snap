@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Member Class New Instance Initializes with Desired Document Model 1`] = `
+Member {
+  "_dom": {
+    "attributes": {
+      "DataType": "DINT",
+      "Hidden": false,
+      "Name": "tagName",
+      "Radix": "decimal",
+    },
+    "elements": [],
+    "name": "Member",
+    "type": "element",
+  },
+}
+`;
+
+exports[`Member Class New Instance Initializes with Desired Document Model 2`] = `
+Member {
+  "_dom": {
+    "attributes": {
+      "BitNumber": 0,
+      "DataType": "BIT",
+      "Hidden": false,
+      "Name": "tagName",
+      "Radix": "binary",
+      "Target": "aTarget",
+    },
+    "elements": [],
+    "name": "Member",
+    "type": "element",
+  },
+}
+`;
+
+exports[`Member Class New Instance Initializes with Desired Document Model 3`] = `
+Member {
+  "_dom": {
+    "attributes": {
+      "BitNumber": 0,
+      "DataType": "BIT",
+      "Hidden": false,
+      "Name": "tagName",
+      "Radix": "binary",
+      "Target": "aTarget",
+    },
+    "elements": [],
+    "name": "Member",
+    "type": "element",
+  },
+}
+`;
+
+exports[`Member Class New Instance Initializes with Desired Document Model 4`] = `
+Member {
+  "_dom": {
+    "attributes": {
+      "DataType": "DINT",
+      "Hidden": false,
+      "Name": "tagName",
+      "Radix": "decimal",
+    },
+    "elements": [
+      {
+        "elements": [
+          {
+            "text": "A Description",
+            "type": "text",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+    ],
+    "name": "Member",
+    "type": "element",
+  },
+}
+`;
+
+exports[`Member Class New Instance Initializes with Desired Document Model 5`] = `
+Member {
+  "_dom": {
+    "attributes": {
+      "DataType": "DINT",
+      "Hidden": true,
+      "Name": "tagName",
+      "Radix": "decimal",
+    },
+    "elements": [
+      {
+        "elements": [
+          {
+            "text": "A Description",
+            "type": "text",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+    ],
+    "name": "Member",
+    "type": "element",
+  },
+}
+`;
+
+exports[`Member Class New Instance Initializes with Desired Document Model 6`] = `
+Member {
+  "_dom": {
+    "attributes": {
+      "DataType": "DINT",
+      "Hidden": false,
+      "Name": "tagName",
+      "Radix": "decimal",
+    },
+    "elements": [
+      {
+        "elements": [
+          {
+            "text": "A Description",
+            "type": "text",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+    ],
+    "name": "Member",
+    "type": "element",
+  },
+}
+`;
+
+exports[`Member Class New Instance Initializes with Desired Document Model 7`] = `
+Member {
+  "_dom": {
+    "attributes": {
+      "DataType": "DINT",
+      "Hidden": false,
+      "Name": "tagName",
+      "Radix": "decimal",
+    },
+    "elements": [
+      {
+        "elements": [
+          {
+            "text": "A Description",
+            "type": "text",
+          },
+        ],
+        "name": "Description",
+        "type": "element",
+      },
+    ],
+    "name": "Member",
+    "type": "element",
+  },
+}
+`;

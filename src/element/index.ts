@@ -21,14 +21,14 @@ export class Element {
     searchTree?: XmlElement
   ): XmlElement | null {
     validateString(type, 'findOne type');
-    
+
     if (attributes) validateObject(attributes, 'findOne attributes');
     if (!Array.isArray(ignore)) {
       throw new Error('findOne ignore expected type <Array>');
     }
 
     const tree = searchTree || this._dom;
-    
+
     if (!tree.elements || !Array.isArray(tree.elements) || tree.elements.length === 0) {
       return null;
     }
@@ -62,7 +62,7 @@ export class Element {
   ): XmlElement[] {
     const results: XmlElement[] = [];
     const tree = searchTree || this._dom;
-    
+
     if (!tree.elements || !Array.isArray(tree.elements)) return results;
 
     for (const elem of tree.elements) {
