@@ -28,8 +28,8 @@ export interface TagOptions {
 
 export interface ProgramOptions {
   name: string;
-  type?: string;
   description?: string;
+  safety?: boolean;
 }
 
 export interface RoutineOptions {
