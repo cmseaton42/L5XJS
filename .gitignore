@@ -1,9 +1,9 @@
 /node_modules/ 
-
+/dist/
 /sample/
-
 /scripts/
-
 /assets/
-
 /coverage/
+*.log
+.DS_Store
+.env

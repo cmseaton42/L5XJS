@@ -1,28 +1,20 @@
 module.exports = {
+    parser: '@typescript-eslint/parser',
+    plugins: ['@typescript-eslint'],
+    extends: [
+        'eslint:recommended'
+    ],
     env: {
-        "jest/globals": true,
-        es6: true,
-        node: true
+        node: true,
+        es2020: true,
+        jest: true
     },
-    extends: ["eslint:recommended"],
     parserOptions: {
-        ecmaVersion: 8,
-        sourceType: "module",
-        ecmaFeatures: {
-            jsx: true,
-            experimentalObjectRestSpread: true
-        }
+        ecmaVersion: 2020,
+        sourceType: 'module'
     },
     rules: {
-        indent: ["error", 4],
-        "no-console": 0,
-        quotes: ["error", "double"],
-        semi: ["error", "always"],
-        "jest/no-disabled-tests": "warn",
-        "jest/no-focused-tests": "error",
-        "jest/no-identical-title": "error",
-        "jest/prefer-to-have-length": "warn",
-        "jest/valid-expect": "error"
-    },
-    plugins: ["jest"]
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'error'
+    }
 };
